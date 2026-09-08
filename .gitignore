@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyo.py
+.pytest_cache/
+
+# Database files (local data, never push)
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Local data / cache
+data/*
+!data/.gitkeep
+logs/
+cache/
+
+# Backups
+backup_*/
+*.bak
+*.backup*
+*.old
+*.broken
+
+# PID / runtime
+*.pid
+*.sock
+
+# Environment / secrets
+.env
+*.env
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
