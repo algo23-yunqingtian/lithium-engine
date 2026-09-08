@@ -1,0 +1,136 @@
+{
+  "model_version": "1.0",
+  "model_name": "碳酸锂简化博弈推演 Lite Model",
+  "description": "7主体博弈模型的简化版，压缩为价格-成本-库存三因子推演",
+  "created": "2026-09-08",
+
+  "base_parameters": {
+    "price_range": [50000, 250000],
+    "cost_line": 125000,
+    "cost_range": [40000, 200000],
+    "inventory_range": [1, 30],
+    "policy_cap_default": 160000,
+    "policy_floor_default": 130000,
+    "basis_range": [-5000, 5000],
+    "volume_range": [5000, 200000]
+  },
+
+  "agent_definitions": [
+    {
+      "id": "institution",
+      "name": "机构",
+      "icon": "🏦",
+      "weight": 0.30,
+      "clamp": [-70, 70],
+      "info_sensitivity": 0.7,
+      "behavioral_sensitivity": 0.6,
+      "logic": "趋势跟随/动量",
+      "auto_formula": "fPriceCost * 0.5 + fBasis * 0.3"
+    },
+    {
+      "id": "smelter",
+      "name": "冶炼厂",
+      "icon": "🏭",
+      "weight": 0.20,
+      "clamp": [-60, 80],
+      "info_sensitivity": 0.3,
+      "behavioral_sensitivity": 0.2,
+      "logic": "价涨增产→空,价跌减产→多",
+      "auto_formula": "-fPriceCost * 0.6"
+    },
+    {
+      "id": "merchant",
+      "name": "贸易商",
+      "icon": "🚚",
+      "weight": 0.15,
+      "clamp": [-50, 60],
+      "info_sensitivity": 0.5,
+      "behavioral_sensitivity": 0.5,
+      "logic": "月差结构→持有/抛售",
+      "auto_formula": "fBasis * 0.8 + fInventory * 0.2"
+    },
+    {
+      "id": "resource",
+      "name": "矿商",
+      "icon": "⛏️",
+      "weight": 0.15,
+      "clamp": [-50, 70],
+      "info_sensitivity": 0.3,
+      "behavioral_sensitivity": 0.2,
+      "logic": "价格贴成本→减产→多",
+      "auto_formula": "-fPriceCost * 0.5 + (price < cost ? 30 : 0)"
+    },
+    {
+      "id": "retail",
+      "name": "散户",
+      "icon": "👥",
+      "weight": 0.10,
+      "clamp": [-60, 60],
+      "info_sensitivity": 0.9,
+      "behavioral_sensitivity": 0.9,
+      "logic": "情绪驱动/追涨杀跌",
+      "auto_formula": "fPriceCost * 0.3 + fBasis * 0.2"
+    },
+    {
+      "id": "arbitrage",
+      "name": "套利商",
+      "icon": "⚖️",
+      "weight": 0.05,
+      "clamp": [-20, 20],
+      "info_sensitivity": 0.6,
+      "behavioral_sensitivity": 0.4,
+      "logic": "月差均值回归",
+      "auto_formula": "-fBasis * 0.5"
+    },
+    {
+      "id": "policy",
+      "name": "政策",
+      "icon": "🏛️",
+      "weight": 0.05,
+      "clamp": [-60, 60],
+      "info_sensitivity": 0.2,
+      "behavioral_sensitivity": 0.1,
+      "logic": "政策关键词+价格区间",
+      "auto_formula": "fPolicy"
+    }
+  ],
+
+  "factor_signals": {
+    "fPriceCost": {
+      "description": "价格-成本差信号",
+      "formula": "price - cost, scaled: diff > 0 ? min(50, diff/2000) : max(-50, diff/2000)",
+      "range": [-50, 50]
+    },
+    "fInventory": {
+      "description": "库存因子",
+      "formula": "inv < 5 ? 40 : inv > 15 ? -40 : (10-inv)*8",
+      "range": [-40, 40]
+    },
+    "fPolicy": {
+      "description": "政策锚因子",
+      "formula": "price < polFloor ? 30 : price > polCap ? -30 : 0",
+      "range": [-30, 30]
+    },
+    "fBasis": {
+      "description": "现货升贴水因子",
+      "formula": "basis > 1000 ? 20 : basis < -2000 ? -20 : basis/100",
+      "range": [-20, 20]
+    }
+  },
+
+  "global_constraints": {
+    "game_correction_cap": [-10, 10],
+    "inertia_clamp": 20,
+    "stop_loss_pct": 8,
+    "take_profit_pct": 15,
+    "max_position_pct": 30
+  },
+
+  "signal_thresholds": {
+    "bull": "> 5",
+    "bear": "< -5",
+    "neutral": "[-5, 5]",
+    "agent_bull_threshold": 15,
+    "agent_bear_threshold": -15
+  }
+}
