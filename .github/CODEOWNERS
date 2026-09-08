@@ -1,0 +1,17 @@
+# CODEOWNERS — 代码所有权配置
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# 默认：所有文件由主脑 review
+* @algo23-yunqingtian
+
+# 博弈引擎核心逻辑
+/engine/ @algo23-yunqingtian
+
+# 文档
+/docs/ @algo23-yunqingtian
+
+# 数据库 schema
+/sql/ @algo23-yunqingtian
+
+# 工具脚本
+/scripts/ @algo23-yunqingtian
