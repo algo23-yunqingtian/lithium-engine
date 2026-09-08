@@ -63,6 +63,9 @@ lithium-engine/
 │   ├── signal_interactions.py    # 信号驱动互动
 │   ├── fundamental_indices.py    # 基本面指数
 │   └── agent_psychology_calc.py  # Agent 心理计算
+├── model_lite/                # 简化模型参数 + 假设
+│   ├── params.json             # 7 主体定义 + 4 因子 + 约束
+│   └── ASSUMPTIONS.md          # 模型假设文档
 ├── scripts/                   # 工具脚本（回填 / 增量 / 抓取）
 │   ├── backfill_spot.py
 │   ├── backfill_agent_history.py
@@ -145,6 +148,18 @@ python app.py
 | 工作日 18:00 | GitHub Pages 数据推送 | `lithium_gh_static/push_to_github.sh` |
 | 工作日 18:30 | Agent 每日更新 | `engine/agent_daily_update.sh` |
 | 工作日 18:00 | 分钟数据采集 | `scripts/cron_minute_collector.py` |
+
+---
+
+## 简化模型（model_lite）
+
+简化版博弈推演工具，把 7 主体模型压缩为「价格-成本-库存」三因子驱动，用于快速推演和参数调试。
+
+- **在线推演**：<https://algo23-yunqingtian.github.io/lithium-dashboard/pages/model_lite.html>
+- **参数定义**：[`model_lite/params.json`](model_lite/params.json)
+- **模型假设**：[`model_lite/ASSUMPTIONS.md`](model_lite/ASSUMPTIONS.md)
+
+> 完整版（含博弈因子矩阵、信号互动、7 维逻辑评分）见 `engine/` 目录。
 
 ---
 
