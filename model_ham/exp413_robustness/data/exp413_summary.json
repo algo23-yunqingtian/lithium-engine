@@ -1,0 +1,62 @@
+{
+  "baseline_v4": {
+    "annual": 0.7608605903067274,
+    "sharpe": 2.638062874469731,
+    "maxdd": -0.1155600100832581,
+    "calmar": 6.584116683258736,
+    "n_trades": 40
+  },
+  "module1_scan": {
+    "M2": {
+      "best_calmar": 6.922321019314208,
+      "calmar_min": 5.330572958457016,
+      "calmar_mean": 6.267845298952544,
+      "calmar_max": 6.922321019314208,
+      "ann_min": 0.681093873527254,
+      "ann_max": 0.7999434867915014,
+      "sharpe_min": 2.509505517501185,
+      "dd_shallowest": -0.1155600100832581,
+      "dd_deepest": -0.1277712318798096,
+      "cliff_overfit": false,
+      "n_groups": 27
+    },
+    "M3": {
+      "best_calmar": 6.778752777104997,
+      "calmar_min": 4.879958484163245,
+      "calmar_mean": 5.920983245026382,
+      "calmar_max": 6.778752777104997,
+      "ann_min": 0.6526196697434485,
+      "ann_max": 0.73581663257613,
+      "sharpe_min": 2.396109300905561,
+      "dd_shallowest": -0.10854749491105864,
+      "dd_deepest": -0.14228872918289973,
+      "cliff_overfit": false,
+      "n_groups": 9
+    }
+  },
+  "module2_cost": {
+    "cost_grid_pct": [
+      0.0,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4
+    ],
+    "combo_fail_cost_pct": null,
+    "ham_fail_cost_pct": null
+  },
+  "module4_ham_tail": {
+    "n_ham_trades": 40,
+    "win_rate": 0.4,
+    "avg_win": 0.05149148694115907,
+    "avg_loss": 0.017228588488382907,
+    "pl_ratio": 2.988723479922882,
+    "max_single_win": 0.22342263717322608,
+    "max_single_loss": -0.08575769061260467,
+    "p5_loss": -0.026458948368503345,
+    "p10_loss": -0.020976824015502056,
+    "p95_win": 0.10368146830361798,
+    "std_net": 0.05127965028765507
+  }
+}

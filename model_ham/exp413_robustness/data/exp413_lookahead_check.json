@@ -1,0 +1,23 @@
+{
+  "V1_rolling_min_periods": {
+    "pass": true,
+    "checks": 7
+  },
+  "V2_shift_equivariance": {
+    "full_pos_match": 0.8197767145135566,
+    "signal_only_match": 1.0,
+    "pass": "True"
+  },
+  "V3_equity_timing": {
+    "pass": true,
+    "items": 4
+  },
+  "V3_numeric_recompute": {
+    "pass": true
+  },
+  "V4_warmup": {
+    "ham_nan_days": 118,
+    "fund_nan_days": 59,
+    "pass": "True"
+  }
+}
