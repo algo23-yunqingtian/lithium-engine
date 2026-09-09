@@ -1,0 +1,69 @@
+{
+  "backtest_window": {
+    "start": "2024-02-01",
+    "end": "2026-09-07",
+    "n_trading_days": 628
+  },
+  "cost_per_side_pct": 0.15,
+  "risk_control": "exp412 V4固定 (dd_recover=0.05, dd_warn=0.12, dd_hard=0.18, vol_upper=0.55, vol_scale=0.50)",
+  "module1_ham_ablation": {
+    "A_original": {
+      "annual_return": 0.9099,
+      "sharpe_full": 2.5976,
+      "max_drawdown": -0.1542,
+      "calmar": 5.9015,
+      "pl_ratio": 2.9887,
+      "n_trades": 40.0,
+      "win_rate": 0.4,
+      "total_return": 4.0804
+    },
+    "B_noise_mean": {
+      "annual_return": -0.0653,
+      "sharpe_full": -0.1846,
+      "max_drawdown": -0.4315,
+      "calmar": -0.0631,
+      "pl_ratio": 1.0037,
+      "n_trades": 40.3,
+      "win_rate": 0.484
+    },
+    "B_noise_best": {
+      "annual_return": 0.3447,
+      "sharpe_full": 1.2224,
+      "calmar": 1.1588
+    },
+    "n_noise_seeds": 30,
+    "excess_annual": 0.9752,
+    "excess_sharpe": 2.7822,
+    "excess_calmar": 5.9646,
+    "noise_beat_A_ann_pct": 0.0,
+    "noise_beat_A_sharpe_pct": 0.0
+  },
+  "module2_portfolio_ablation": {
+    "T1_full": {
+      "annual_return": 0.7609,
+      "sharpe_full": 2.6381,
+      "max_drawdown": -0.1156,
+      "calmar": 6.5841,
+      "pl_ratio": 2.9268,
+      "n_trades": 40.0,
+      "win_rate": 0.5,
+      "total_return": 3.1425
+    },
+    "T2_no_ham": {
+      "annual_return": 0.0833,
+      "sharpe_full": 0.8158,
+      "max_drawdown": -0.0803,
+      "calmar": 1.0374,
+      "pl_ratio": 11.2019,
+      "n_trades": 7.0,
+      "win_rate": 0.8571,
+      "total_return": 0.2227
+    },
+    "ham_contrib_annual_pct": 89.05,
+    "ham_contrib_sharpe_pct": 69.07,
+    "ham_contrib_calmar_pct": 84.24
+  },
+  "validation": {
+    "T1_matches_exp413_baseline": true
+  }
+}
