@@ -30,22 +30,26 @@ def compute_speculative_demand(P_t, P_t_minus_1, beta):
 def compute_profits(D_f, D_c, P_t, W):
     """
     滚动窗口收益计算
-    Profit_f(t) = sum_{i=t-W}^{t-1} [ D_f(i) * (P(i+1) - P(i)) ]
-    Profit_c(t) = sum_{i=t-W}^{t-1} [ D_c(i) * (P(i+1) - P(i)) ]
+    Profit_f(t) = sum_{i=t-W}^{t-1} [ D_f(i) * (P(i) - P(i-1)) ]
+    Profit_c(t) = sum_{i=t-W}^{t-1} [ D_c(i) * (P(i) - P(i-1)) ]
     
-    严格使用 t 之前数据，不含未来信息
+    严格使用 t 及更早的历史数据，不含未来信息。
+    price_change[i] = P(i)-P(i-1) (已实现收益)；窗口取 [t-W:t] = 索引 t-W..t-1，
+    最大价格索引为 t，不触及 P(t+1)。
     """
     n = len(P_t)
     price_change = np.zeros(n)
-    price_change[1:] = np.diff(P_t)  # P(i+1) - P(i)
-    
+    price_change[1:] = np.diff(P_t)  # price_change[i] = P(i) - P(i-1)
+
     profit_f = np.zeros(n)
     profit_c = np.zeros(n)
-    
+
     for t in range(W, n):
-        window_D_f = D_f[t-W:t]
+        window_D_f = D_f[t-W:t]        # 索引 t-W..t-1
         window_D_c = D_c[t-W:t]
-        window_price_change = price_change[t-W+1:t+1]  # shift: D_f(i) * (P(i+1)-P(i))
+        # 修复(exp4)：窗口 [t-W:t] 仅到 price_change[t-1]=P(t-1)-P(t-2)，
+        # 不含 price_change[t]，彻底消除 1 日未来价格泄露。
+        window_price_change = price_change[t-W:t]
         profit_f[t] = np.sum(window_D_f * window_price_change)
         profit_c[t] = np.sum(window_D_c * window_price_change)
     

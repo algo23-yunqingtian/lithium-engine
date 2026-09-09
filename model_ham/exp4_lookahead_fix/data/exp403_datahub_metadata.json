@@ -1,0 +1,76 @@
+{
+  "project": "lithium_engine_ham",
+  "experiment_round": "round4_lookahead_fix",
+  "exp_ids": [
+    "exp401",
+    "exp402",
+    "exp403"
+  ],
+  "generated_at": "2026-09-09T13:34:36.344870",
+  "fix_summary": "修复ham_model.py:48的1日前视(price_change窗口[t-W+1:t+1]→[t-W:t]), 重生成纯净HAM因子并重跑全套滚动回测",
+  "ham_params": {
+    "alpha": 0.3,
+    "beta": 0.5,
+    "gamma": 2,
+    "W": 20
+  },
+  "rolling_config": {
+    "train_window": 180,
+    "forecast_step": 20,
+    "roll_step": 20,
+    "random_state": 42
+  },
+  "control_groups": {
+    "g1_three_factors": [
+      "n_c",
+      "n_f_minus_n_c",
+      "Total_Demand"
+    ],
+    "g2_two_factors": [
+      "n_c",
+      "Total_Demand"
+    ]
+  },
+  "key_results": {
+    "n_c_pure": {
+      "mean": 0.997,
+      "std": 0.037,
+      "note": "塌陷为近常数"
+    },
+    "n_f_minus_n_c_pure": {
+      "mean": -0.99,
+      "note": "716/720天全投机主导"
+    },
+    "g1_accuracy_out_of_sample": 0.521,
+    "g2_accuracy_out_of_sample": 0.521,
+    "g1_ann_return": 0.771,
+    "g1_max_drawdown": -0.2488,
+    "g1_rank_ic_significant": 0,
+    "long_only_ann_return": 0.604
+  },
+  "version_comparison": {
+    "old_single_split_B_accuracy": 0.545,
+    "old_rolling_B_accuracy": 0.5,
+    "fixed_rolling_g1_accuracy": 0.521
+  },
+  "robust_conclusions": [
+    "GMM聚类K=4稳健(BIC/轮廓一致, 状态持续性85%)",
+    "条件RankIC普遍不显著(Bonferroni后0项)",
+    "n_f_minus_n_c无预测力(修复后塌陷为常数)",
+    "样本外准确率均在50%附近(HAM无稳定预测力)"
+  ],
+  "accidental_noise": [
+    "B组54.5%是单次幸运切点",
+    "旧版n_c变化几乎全靠1日前视撑起",
+    "上一轮2项RankIC显著是样本内假象"
+  ],
+  "lookahead_violation": "未发现新的时序泄露; 修复点已消除1日前视",
+  "artifact_paths": {
+    "factors_pure": "exp4_lookahead_fix/data/exp401_ham_factors_pure.csv",
+    "g1_predictions": "exp4_lookahead_fix/data/exp402_g1_predictions.csv",
+    "g2_predictions": "exp4_lookahead_fix/data/exp402_g2_predictions.csv",
+    "overview_table": "exp4_lookahead_fix/reports/exp403_overview_table.md",
+    "methodology_lesson": "exp4_lookahead_fix/reports/exp403_methodology_lesson.md",
+    "rolling_report": "exp4_lookahead_fix/reports/exp402_rolling_backtest_pure.md"
+  }
+}
