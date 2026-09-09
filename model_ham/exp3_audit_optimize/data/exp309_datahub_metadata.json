@@ -1,0 +1,139 @@
+{
+  "experiment_series": "exp301-exp309",
+  "project": "lithium-engine / model_ham / 碳酸锂GMM市场状态聚类",
+  "round": 3,
+  "title": "反向校验+稳健性增强实验",
+  "date": "2026-09-09",
+  "data": {
+    "source": "ham_state_combined.csv + market_state_label.csv",
+    "n_total": 533,
+    "n_train": 399,
+    "n_test": 134,
+    "date_range": "2023-12-06 ~ 2026-07-30",
+    "features_fund": [
+      "warehouse_stock",
+      "basis_spot_main",
+      "spread_near1_near3",
+      "hv_20d",
+      "oi_main"
+    ],
+    "features_ham": [
+      "n_c",
+      "n_f_minus_n_c",
+      "Total_Demand"
+    ]
+  },
+  "experiments": [
+    {
+      "id": "exp301",
+      "type": "前置核查1",
+      "desc": "确认54.5%属测试集+过拟合检测",
+      "key_result": "B组样本外54.5%,训练集58.4%,A组训练83%过拟合",
+      "files": [
+        "reports/exp301_audit1_dataset.md"
+      ]
+    },
+    {
+      "id": "exp302",
+      "type": "前置核查2补充",
+      "desc": "HAM因子前视量化",
+      "key_result": "HAM含1日前视,准确率影响0.7pp,非致命",
+      "files": [
+        "logs/exp302_ham_lookhead.log"
+      ]
+    },
+    {
+      "id": "exp303",
+      "type": "前置核查3",
+      "desc": "同子集对照(关闭spread)",
+      "key_result": "B组54.5%完全不变(来自HAM),A组-3.7pp,归因清晰",
+      "files": [
+        "reports/exp303_audit3_subset_control.md"
+      ]
+    },
+    {
+      "id": "exp304",
+      "type": "优化实验1",
+      "desc": "1%-99%缩尾增强",
+      "key_result": "B组+2.2pp,轮廓0.12→0.10,缩尾对LightGBM影响有限",
+      "files": [
+        "reports/exp304_exp1_winsorize.md",
+        "data/exp304_winsor_limits.json"
+      ]
+    },
+    {
+      "id": "exp305",
+      "type": "优化实验2",
+      "desc": "K=2/3/4稳健性",
+      "key_result": "BIC单调降K=4最优,轮廓K=4最高,消融对K不敏感",
+      "files": [
+        "reports/exp305_exp2_robustness_K.md"
+      ]
+    },
+    {
+      "id": "exp306",
+      "type": "优化实验3(核心)",
+      "desc": "滚动窗口时序回测(180/20/20)",
+      "key_result": "整体50.0%(上一轮54.5%消失),多空91.94%<多头94.25%,B组不可复现",
+      "files": [
+        "reports/exp306_exp3_rolling_backtest.md",
+        "reports/exp306_rolling_backtest.png",
+        "data/exp306_rolling_predictions.csv",
+        "data/exp306_rolling_windows.json"
+      ]
+    },
+    {
+      "id": "exp307",
+      "type": "优化实验4",
+      "desc": "五分位分层+固定多头基准",
+      "key_result": "B组多空+31%>多头+9.9%(+21pp,单次幸运),Q5-Q1无显著单调",
+      "files": [
+        "reports/exp307_exp4_quantile_baseline.md"
+      ]
+    },
+    {
+      "id": "exp308",
+      "type": "专章",
+      "desc": "HAM离散因子统计效力",
+      "key_result": "n_c/n_f分组均值t检验均不显著,n_f-n_c样本内外翻转(过拟合)",
+      "files": [
+        "reports/exp308_ham_discrete_factors.md"
+      ]
+    },
+    {
+      "id": "exp309",
+      "type": "汇总",
+      "desc": "对比总览表+元数据",
+      "files": [
+        "reports/exp309_overview_table.md"
+      ]
+    }
+  ],
+  "hard_constraints_verified": {
+    "no_full_data_gmm_fit": true,
+    "no_full_data_standardize": true,
+    "no_future_leakage": true,
+    "time_series_alignment": "verified (shift(-N) direction correct)",
+    "in_sample_out_sample_separated": true,
+    "multiple_testing_correction": "Bonferroni applied"
+  },
+  "vulnerabilities_found": [
+    "上一轮B组54.5%为幸运切点,滚动窗口下消失至50%",
+    "上一轮'2项RankIC显著'为样本内假象",
+    "HAM因子含1日前视(price_change窗口)",
+    "训练集严重过拟合(83%+)被上一轮掩盖",
+    "n_f-n_c样本内外方向翻转(过拟合)"
+  ],
+  "stable_findings": [
+    "GMM聚类K=4稳健",
+    "状态持续性85%稳定",
+    "条件RankIC普遍不显著(Bonferroni后)",
+    "聚类对K不敏感"
+  ],
+  "accidental_findings": [
+    "B组54.5%准确率(滚动下消失)",
+    "上一轮RankIC显著项(样本内假象)",
+    "HAM因子预测力(滚动下无)",
+    "n_f-n_c方向(样本内外翻转)"
+  ]
+}
