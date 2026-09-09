@@ -1,0 +1,4 @@
+factor,train_window,mean_ic,n_win
+f_stock_pct20,160,-0.2527010872184348,30
+f_stock_pct20,180,-0.2574500736008415,29
+f_stock_pct20,200,-0.2629064491928597,28

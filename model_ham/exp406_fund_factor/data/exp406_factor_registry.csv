@@ -1,0 +1,7 @@
+factor,name_cn,mean_ic,icir,pval,screen_keep,screen_reason,backtest_accuracy,backtest_sharpe,robust_stable,final_decision
+f_stock_pct20,库存(仓单)20日环比,-0.2575,-0.786,0.0002,True,保留,0.5452,2.84,True,保留(稳健)
+f_wh_basis,仓单基差(现货-期货),-0.0507,-0.238,0.2113,False,淘汰:IC不稳定,,,False,淘汰
+f_wh_basis_x_stockpct,仓单基差×仓单增速,0.1074,0.661,0.0014,True,保留,0.5127,2.17,False,保留(不稳健:周期敏感)
+f_oprate_pct20,开工率20日环比,0.0116,0.051,0.7841,False,淘汰:IC不稳定,,,False,淘汰
+f_prod_pct20,产量20日环比,0.0083,0.029,0.8757,False,淘汰:IC不稳定,,,False,淘汰
+f_cell_pct20,动力电池20日环比,-0.2888,-0.913,0.0012,True,保留,0.5476,2.12,True,保留(稳健但样本少35)
