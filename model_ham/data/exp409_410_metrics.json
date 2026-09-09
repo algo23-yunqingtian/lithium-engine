@@ -1,0 +1,150 @@
+{
+  "groups": {
+    "ctrl1_ham_fixed20": {
+      "n_trades": 22,
+      "total_return": 3.3827469436012816,
+      "annual_return": 0.6704312634570382,
+      "sharpe": 1.6153064394702377,
+      "max_drawdown": -0.27038342882327016,
+      "win_rate": 0.5,
+      "pl_ratio": 1.7118112423955567,
+      "avg_hold_days": 19.136363636363637,
+      "exit_reasons": {
+        "fixed_20": 22
+      }
+    },
+    "exp1_ham_dynamic": {
+      "n_trades": 51,
+      "total_return": 4.279469836159138,
+      "annual_return": 0.7819660032283091,
+      "sharpe": 2.6561601498685463,
+      "max_drawdown": -0.14675944158808485,
+      "win_rate": 0.3137254901960784,
+      "pl_ratio": 1.5613111243598952,
+      "avg_hold_days": 1.392156862745098,
+      "exit_reasons": {
+        "neutral_revert": 21,
+        "gmm_transition": 15,
+        "reverse_signal": 15
+      }
+    },
+    "ctrl2_fund_fixed20": {
+      "n_trades": 28,
+      "total_return": -0.03287064932754369,
+      "annual_return": -0.010934199246616205,
+      "sharpe": 0.24012520075567473,
+      "max_drawdown": -0.5007676555404471,
+      "win_rate": 0.5714285714285714,
+      "pl_ratio": 0.9317627550499088,
+      "avg_hold_days": 20.0,
+      "exit_reasons": {
+        "fixed_20": 28
+      },
+      "nav_sharpe_exp407_caliber": 3.6158178326393604,
+      "nav_acc_exp407_caliber": 0.5609756097560976
+    },
+    "exp2_fund_dynamic": {
+      "n_trades": 13,
+      "total_return": 0.1799106336915277,
+      "annual_return": 0.05592865925357371,
+      "sharpe": 0.5728872971721947,
+      "max_drawdown": -0.1648682450988452,
+      "win_rate": 0.6923076923076923,
+      "pl_ratio": 1.426763540928225,
+      "avg_hold_days": 8.076923076923077,
+      "exit_reasons": {
+        "marginal_decay": 5,
+        "expect_realized": 4,
+        "max_hold": 4
+      },
+      "nav_sharpe_exp407_caliber": 3.6158178326393604,
+      "nav_acc_exp407_caliber": 0.5609756097560976
+    }
+  },
+  "hold_cycles": {
+    "HAM\u52a8\u6001": {
+      "label": "HAM\u52a8\u6001",
+      "n_total": 51,
+      "bins": [
+        {
+          "range": "0-3\u5929",
+          "n": 46,
+          "win_rate": 0.2391304347826087,
+          "avg_ret": -0.018967801696609332
+        },
+        {
+          "range": "3-6\u5929",
+          "n": 4,
+          "win_rate": 1.0,
+          "avg_ret": 0.0878086619466784
+        },
+        {
+          "range": "6-10\u5929",
+          "n": 1,
+          "win_rate": 1.0,
+          "avg_ret": 0.222222637173226
+        }
+      ]
+    },
+    "HAM\u56fa\u5b9a20": {
+      "label": "HAM\u56fa\u5b9a20",
+      "n_total": 22,
+      "bins": [
+        {
+          "range": "0-3\u5929",
+          "n": 1,
+          "win_rate": 0.0,
+          "avg_ret": -0.0048317598985486
+        },
+        {
+          "range": "15-25\u5929",
+          "n": 21,
+          "win_rate": 0.5238095238095238,
+          "avg_ret": 0.02692591204810036
+        }
+      ]
+    },
+    "\u57fa\u672c\u9762\u52a8\u6001": {
+      "label": "\u57fa\u672c\u9762\u52a8\u6001",
+      "n_total": 13,
+      "bins": [
+        {
+          "range": "0-3\u5929",
+          "n": 6,
+          "win_rate": 0.8333333333333334,
+          "avg_ret": 0.035606395178221534
+        },
+        {
+          "range": "6-10\u5929",
+          "n": 2,
+          "win_rate": 0.5,
+          "avg_ret": 0.01386364257412215
+        },
+        {
+          "range": "10-15\u5929",
+          "n": 1,
+          "win_rate": 1.0,
+          "avg_ret": 0.0779756097560975
+        },
+        {
+          "range": "15-25\u5929",
+          "n": 4,
+          "win_rate": 0.5,
+          "avg_ret": -0.011768624665737429
+        }
+      ]
+    },
+    "\u57fa\u672c\u9762\u56fa\u5b9a20": {
+      "label": "\u57fa\u672c\u9762\u56fa\u5b9a20",
+      "n_total": 28,
+      "bins": [
+        {
+          "range": "15-25\u5929",
+          "n": 28,
+          "win_rate": 0.5714285714285714,
+          "avg_ret": 0.009439794390831155
+        }
+      ]
+    }
+  }
+}

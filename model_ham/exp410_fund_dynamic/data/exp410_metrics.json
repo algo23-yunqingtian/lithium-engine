@@ -1,0 +1,34 @@
+{
+  "fund_dynamic": {
+    "n_trades": 13,
+    "total_return": 0.1799106336915277,
+    "annual_return": 0.05592865925357371,
+    "sharpe": 0.5728872971721947,
+    "max_drawdown": -0.1648682450988452,
+    "win_rate": 0.6923076923076923,
+    "pl_ratio": 1.426763540928225,
+    "avg_hold_days": 8.076923076923077,
+    "exit_reasons": {
+      "marginal_decay": 5,
+      "expect_realized": 4,
+      "max_hold": 4
+    },
+    "nav_sharpe_exp407_caliber": 3.6158178326393604,
+    "nav_acc_exp407_caliber": 0.5609756097560976
+  },
+  "fund_fixed20": {
+    "n_trades": 28,
+    "total_return": -0.03287064932754369,
+    "annual_return": -0.010934199246616205,
+    "sharpe": 0.24012520075567473,
+    "max_drawdown": -0.5007676555404471,
+    "win_rate": 0.5714285714285714,
+    "pl_ratio": 0.9317627550499088,
+    "avg_hold_days": 20.0,
+    "exit_reasons": {
+      "fixed_20": 28
+    },
+    "nav_sharpe_exp407_caliber": 3.6158178326393604,
+    "nav_acc_exp407_caliber": 0.5609756097560976
+  }
+}

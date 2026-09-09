@@ -1,0 +1,30 @@
+{
+  "ham_dynamic": {
+    "n_trades": 51,
+    "total_return": 4.279469836159138,
+    "annual_return": 0.7819660032283091,
+    "sharpe": 2.6561601498685463,
+    "max_drawdown": -0.14675944158808485,
+    "win_rate": 0.3137254901960784,
+    "pl_ratio": 1.5613111243598952,
+    "avg_hold_days": 1.392156862745098,
+    "exit_reasons": {
+      "neutral_revert": 21,
+      "gmm_transition": 15,
+      "reverse_signal": 15
+    }
+  },
+  "ham_fixed20": {
+    "n_trades": 22,
+    "total_return": 3.3827469436012816,
+    "annual_return": 0.6704312634570382,
+    "sharpe": 1.6153064394702377,
+    "max_drawdown": -0.27038342882327016,
+    "win_rate": 0.5,
+    "pl_ratio": 1.7118112423955567,
+    "avg_hold_days": 19.136363636363637,
+    "exit_reasons": {
+      "fixed_20": 22
+    }
+  }
+}
