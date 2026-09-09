@@ -1,0 +1,85 @@
+{
+  "config": {
+    "version": "V4",
+    "period": "2024-02-01 ~ 2026-09-07",
+    "cost_per_side": 0.0015,
+    "m2_dd_control": {
+      "recover": 0.05,
+      "warn": 0.12,
+      "hard_stop": 0.18,
+      "multipliers": {
+        "normal": 1.0,
+        "warn": 0.7,
+        "hard": 0.3
+      },
+      "trailing_window": 60
+    },
+    "m3_vol_control": {
+      "threshold": 0.55,
+      "scale": 0.5,
+      "lookback": 20
+    },
+    "m1_ham_multiplier": "REMOVED — 诊断发现所有基本面状态下HAM都盈利(胜率40-73%), 压制反而损失利润",
+    "param_search": "72组网格搜索, 按Calmar比率排序, 最优dd_rec=0.05,dd_warn=0.12,dd_hard=0.18,vol_up=0.55,vol_sc=0.50"
+  },
+  "vol_stats": {
+    "mean": 0.39969370377902136,
+    "std": 0.210506271516224,
+    "max": 1.1778072781597955,
+    "high_vol_pct": 18.630573248407643
+  },
+  "exp411_baseline": {
+    "n_trades": 40,
+    "total_return": 4.741603501359221,
+    "annual_return_full": 1.0052240156559265,
+    "annual_return_held": 1.0826929519714121,
+    "sharpe_full": 2.539748299456048,
+    "sharpe_held": 4.633208349860973,
+    "max_drawdown_full": -0.16953733521433623,
+    "max_drawdown_held": -0.16553641611504116,
+    "win_rate": 0.5,
+    "pl_ratio": 2.839976614024572,
+    "avg_hold_days": 4.525,
+    "n_hold_days": 221,
+    "n_total_days": 628
+  },
+  "exp412_risk_control": {
+    "n_trades": 40,
+    "total_return": 3.142486805685767,
+    "annual_return_full": 0.7608605903067265,
+    "annual_return_held": 0.8163072106733418,
+    "sharpe_full": 2.63806287446973,
+    "sharpe_held": 4.830000944434779,
+    "max_drawdown_full": -0.1155600100832581,
+    "max_drawdown_held": -0.11407223748344526,
+    "win_rate": 0.5,
+    "pl_ratio": 2.9267960513473827,
+    "avg_hold_days": 4.525,
+    "n_hold_days": 221,
+    "n_total_days": 628
+  },
+  "risk_trigger_stats": {
+    "dd_control_triggered_days": 80,
+    "vol_control_triggered_days": 117
+  },
+  "signal_state_counts": {
+    "exp411": {
+      "flat": 405,
+      "ham_only": 105,
+      "fund_only": 101,
+      "both_opp": 10,
+      "both_same": 7
+    },
+    "exp412": {
+      "flat": 405,
+      "ham_only": 105,
+      "fund_only": 101,
+      "both_opp": 10,
+      "both_same": 7
+    }
+  },
+  "calmar_ratio": {
+    "exp411": 5.93,
+    "exp412": 6.58
+  }
+}
