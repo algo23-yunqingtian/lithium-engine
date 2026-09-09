@@ -1,0 +1,6 @@
+metric,expected,actual,abs_diff,PASS
+annual_return,0.7609,0.7609,3.9e-05,True
+sharpe_full,2.6381,2.6381,3.7e-05,True
+max_drawdown,-0.1156,-0.1156,4e-05,True
+calmar,6.5841,6.5841,1.7e-05,True
+n_trades,40.0,40.0,0.0,True

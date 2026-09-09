@@ -1,0 +1,42 @@
+{
+  "zinc_period": "2024-02-01 ~ 2026-09-07",
+  "zinc_data_range": "2007-03-26 ~ 2026-09-09",
+  "p_fund_method": "close 60日滚动均值 (跨品种可移植基本面回归锚)",
+  "params": "与碳酸锂完全一致: alpha=0.3 beta=0.5 gamma=2 W=20, exp412 V4风控",
+  "zinc_ham_only": {
+    "n_trades": 27,
+    "total_return": 0.3956200196117099,
+    "annual_return": 0.1419057268881303,
+    "sharpe_full": 1.7139130006195913,
+    "max_drawdown": -0.03836926975351292,
+    "calmar": 3.6984213616715507,
+    "win_rate": 0.4444444444444444,
+    "pl_ratio": 1.275610018165739,
+    "avg_hold_days": 2.5925925925925926
+  },
+  "zinc_ham_risk": {
+    "n_trades": 27,
+    "total_return": 0.3956200196117099,
+    "annual_return": 0.1419057268881303,
+    "sharpe_full": 1.7139130006195913,
+    "max_drawdown": -0.03836926975351292,
+    "calmar": 3.6984213616715507,
+    "win_rate": 0.4444444444444444,
+    "pl_ratio": 1.275610018165739,
+    "avg_hold_days": 2.5925925925925926
+  },
+  "lithium_ham_only": {
+    "n_trades": 40,
+    "total_return": 4.0803674102333405,
+    "annual_return": 0.9098937362231017,
+    "sharpe_full": 2.597621882047032,
+    "max_drawdown": -0.15417983439304994,
+    "calmar": 5.9015093627842,
+    "win_rate": 0.4,
+    "pl_ratio": 2.988723479922882,
+    "avg_hold_days": 2.05
+  },
+  "zinc_buyhold_annual": 0.10929546537823831,
+  "zinc_ham_excess_annual": 0.03261026150989199,
+  "verdict": "HAM因子在锌上仍具备正超额, 具备跨品种泛化能力"
+}

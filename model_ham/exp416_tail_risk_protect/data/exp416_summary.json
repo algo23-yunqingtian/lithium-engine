@@ -1,0 +1,102 @@
+{
+  "config": {
+    "period": "2024-02-01 ~ 2026-09-07",
+    "cost_per_side": 0.0015,
+    "T0": "exp412 原版 (基准)",
+    "T1_vol_overnight": {
+      "vol_half_thr": 0.4,
+      "vol_full_thr": 0.9,
+      "half_scale": 0.5,
+      "full_scale": 0.0
+    },
+    "T2_vol_trend": {
+      "vol_half_thr": 0.4,
+      "vol_full_thr": 0.9,
+      "trend_thr": 0.05,
+      "trend_scale": 0.6
+    },
+    "T3_option_hedge": {
+      "strike_pct": 0.07,
+      "horizon_days": 1.0
+    }
+  },
+  "baseline_reproduce": "PASS",
+  "T0": {
+    "n_trades": 40,
+    "total_return": 3.142486805685767,
+    "annual_return": 0.7608605903067265,
+    "sharpe_full": 2.63806287446973,
+    "max_drawdown": -0.1155600100832581,
+    "calmar": 6.584116683258728,
+    "win_rate": 0.5,
+    "pl_ratio": 2.9267960513473827,
+    "avg_hold_days": 4.525
+  },
+  "T1": {
+    "n_trades": 39,
+    "total_return": 1.711879764716898,
+    "annual_return": 0.4875797812624989,
+    "sharpe_full": 2.7986662281593575,
+    "max_drawdown": -0.059946483064319656,
+    "calmar": 8.133584429621159,
+    "win_rate": 0.5128205128205128,
+    "pl_ratio": 4.13352938423366,
+    "avg_hold_days": 4.538461538461538
+  },
+  "T2": {
+    "n_trades": 39,
+    "total_return": 0.9688647404354609,
+    "annual_return": 0.3095562470041684,
+    "sharpe_full": 2.7399820664202674,
+    "max_drawdown": -0.03600916769297333,
+    "calmar": 8.596595446013984,
+    "win_rate": 0.5384615384615384,
+    "pl_ratio": 3.9051878829058158,
+    "avg_hold_days": 4.538461538461538
+  },
+  "T3": {
+    "annual_return": 0.28229919502866596,
+    "sharpe_full": 2.461416273440499,
+    "max_drawdown": -0.060730022614149025,
+    "calmar": 4.648428946293447,
+    "total_return": 0.8675373510179665
+  },
+  "module1_best_vol": {
+    "vol_half_thr": 0.4,
+    "vol_full_thr": 0.9,
+    "n_half_days": 250.0,
+    "n_full_days": 25.0,
+    "annual_return": 0.4875797812624989,
+    "sharpe_full": 2.7986662281593575,
+    "max_drawdown": -0.059946483064319656,
+    "calmar": 8.133584429621159,
+    "n_trades": 39.0,
+    "ret_loss_vs_T0": -0.2732808090442276,
+    "dd_improve_vs_T0": 0.055613527018938444
+  },
+  "module1_best_trend": {
+    "trend_thr": 0.05,
+    "trend_scale": 0.6,
+    "n_trend_days": 394.0,
+    "annual_return": 0.3095562470041684,
+    "sharpe_full": 2.7399820664202674,
+    "max_drawdown": -0.03600916769297333,
+    "calmar": 8.596595446013984,
+    "ret_loss_vs_T0": -0.4513043433025581,
+    "dd_improve_vs_T0": 0.07955084239028476
+  },
+  "module2_best_option": {
+    "strike_pct": 7.000000000000001,
+    "horizon_days": 1.0,
+    "annual_return": 0.28229919502866596,
+    "sharpe_full": 2.461416273440499,
+    "max_drawdown": -0.060730022614149025,
+    "calmar": 4.648428946293447,
+    "n_option_days": 216.0,
+    "premium_cost_total": 0.044304908761066894,
+    "premium_cost_pct_of_base": 0.14312393689302705,
+    "ret_loss_vs_base": -0.027257051975502433,
+    "dd_improve_vs_base": -0.02472085492117569,
+    "payoff_total": -0.007796448378459884
+  }
+}

@@ -1,0 +1,9 @@
+date,disagreement_full,disagreement_trunc,deviation_full,deviation_trunc,signal_dir,main_trigger,open_signal,position_size,PASS,status
+2024-04-01,0.899225,0.899225,0.899225,0.899225,1.0,True,True,1.0,True,
+2024-07-01,0.455556,0.455556,0.455556,0.455556,1.0,False,False,0.0,True,
+2024-10-15,0.161111,0.161111,0.161111,0.161111,1.0,False,False,0.0,True,
+2025-02-01,,,,,,,,,,SKIP(无数据)
+2025-05-20,-0.211111,-0.211111,0.211111,0.211111,-1.0,False,False,0.0,True,
+2025-11-20,-0.288889,-0.288889,0.288889,0.288889,-1.0,False,False,0.0,True,
+2026-02-01,,,,,,,,,,SKIP(无数据)
+2026-07-01,0.577778,0.577778,0.577778,0.577778,1.0,False,False,0.0,True,
