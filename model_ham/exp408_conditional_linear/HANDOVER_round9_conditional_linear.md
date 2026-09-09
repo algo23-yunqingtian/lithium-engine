@@ -165,7 +165,7 @@ cd /home/ubuntu/lithium-engine
 ## 9. GitHub 提交记录
 
 - exp408 产物已提交：`git add model_ham/exp408_conditional_linear/ && git commit && git push`
-- 提交SHA: （push后更新）
+- 提交SHA: 52291b1（main 分支，已 push 成功）
 
 ---
 
