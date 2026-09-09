@@ -1,0 +1,2 @@
+max_consecutive_long_days,max_consecutive_short_days,heavy_position_days_pct,cumulative_heavy_exposure,max_loss_streak_days,max_loss_streak_equity_drop_pct,max_dd_trough_date,max_dd_depth_pct,dd_segment_avg_exposure,dd_segment_avg_direction,dd_cause_by_crowding
+33,20,20.7,110.4,8,-10.52,2025-08-18,-11.56,0.219,-0.087,否(回撤段非集中持仓)

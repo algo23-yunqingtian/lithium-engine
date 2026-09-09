@@ -1,0 +1,55 @@
+{
+  "base_T1": {
+    "n_trades": 40,
+    "total_return": 3.1425,
+    "annual_return": 0.7609,
+    "sharpe_full": 2.6381,
+    "max_drawdown": -0.1156,
+    "calmar": 6.5841,
+    "win_rate": 0.5,
+    "pl_ratio": 2.9268,
+    "avg_hold_days": 4.525
+  },
+  "B1_capacity": {
+    "base_annual_return": 0.7609,
+    "n_trades": 40,
+    "ann_turnover": 15.92,
+    "DAILY_ADV_yuan": 20000000000.0,
+    "capacity_80pct_yi": 100.0,
+    "capacity_zero_return_yi": 100.0,
+    "capacity_sharpe15_yi": 100.0
+  },
+  "B2_gap": {
+    "stop_level_pct": 5.0,
+    "hist_p1_gap_pct": -8.9,
+    "hist_p5_gap_pct": -3.89,
+    "worst_single_loss_at_5pct_gap": 5.3,
+    "worst_single_loss_at_15pct_gap": 15.3,
+    "stops_broken_at_5pct_gap": 35.0,
+    "stops_broken_at_15pct_gap": 82.5,
+    "n_trades": 40
+  },
+  "B3_stability": {
+    "n_quarters": 11,
+    "quarters_with_positive_excess": 9,
+    "pct_positive_excess": 81.8,
+    "front_half_excess_pct": 14.03,
+    "back_half_excess_pct": 6.45,
+    "drift_back_minus_front": -7.58,
+    "seg_sharpe_cv": 0.895,
+    "drift_flag": "轻微漂移"
+  },
+  "B4_crowding": {
+    "max_consecutive_long_days": 33,
+    "max_consecutive_short_days": 20,
+    "heavy_position_days_pct": 20.7,
+    "cumulative_heavy_exposure": 110.4,
+    "max_loss_streak_days": 8,
+    "max_loss_streak_equity_drop_pct": -10.52,
+    "max_dd_trough_date": "2025-08-18",
+    "max_dd_depth_pct": -11.56,
+    "dd_segment_avg_exposure": 0.219,
+    "dd_segment_avg_direction": -0.087,
+    "dd_cause_by_crowding": "否(回撤段非集中持仓)"
+  }
+}

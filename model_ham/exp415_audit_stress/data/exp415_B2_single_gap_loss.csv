@@ -1,0 +1,6 @@
+gap_pct,stop_level_pct,worst_single_loss_pct,pct_stops_broken,stop_effective
+3.0,5.0,3.3,0.0,是
+5.0,5.0,5.3,35.0,否(失效)
+8.0,5.0,8.3,40.0,否(失效)
+12.0,5.0,12.3,82.5,否(失效)
+15.0,5.0,15.3,82.5,否(失效)
