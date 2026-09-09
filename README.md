@@ -163,6 +163,21 @@ python app.py
 
 ---
 
+## 量化模型实验分支（model_ham）
+
+`model_ham/` 目录下的因子/聚类实验分支，经多轮滚动窗口验证后形成两条明确结论：
+
+| 分支 | 实验编号 | 结论 | 状态 |
+|------|---------|------|------|
+| **HAM 预测** | exp401-exp403 | HAM 因子**无定量预测能力**；且原版含 1 日未来价格前视漏洞（已修复验证）。滚动样本外准确率≈50%，RankIC 不显著 | 🔴 **分支终止**，不作预测信号 |
+| **GMM 聚类** | exp404 | K=4 聚类稳健，用于市场状态归类、行情复盘；滚动窗口训练无全量拟合 | 🟢 **保留**，仅定性复盘 |
+
+- **HAM 预测分支终止**：Brock-Hommes 双主体因子（n_c / n_f-n_c / Total_Demand）在碳酸锂上三轮验证均无外推预测力，已关闭迭代。详见 `model_ham/exp4_lookahead_fix/HANDOVER_round4_lookahead_fix.md`。
+- **GMM 聚类保留**：保留 4 状态市场阶段归类，用于定性复盘（当前状态、历史转移频率、持续天数），**不做涨跌预测**。详见 `model_ham/exp404_cluster_analysis/HANDOVER_round5_cluster_analysis.md`。
+- **方法论留存**：单次静态切分的"幸运切点"问题 + 注释与代码不一致陷阱，见 `model_ham/exp4_lookahead_fix/reports/exp403_methodology_lesson.md`。
+
+---
+
 ## 协作
 
 详见 [`docs/COLLAB_GUIDE.md`](docs/COLLAB_GUIDE.md) 与 [`AGENTS.md`](AGENTS.md)。
