@@ -1,0 +1,215 @@
+{
+  "config": {
+    "period": "2023-2023-2024",
+    "w_ham_only": 0.6,
+    "w_fund_only": 0.7,
+    "w_max": 1.0,
+    "cost_per_side": 0.0015
+  },
+  "metrics_A": {
+    "ctrl1_ham_fixed20": {
+      "n_trades": 22,
+      "total_return": 3.124310843979635,
+      "annual_return_full": 0.7577808361002079,
+      "annual_return_held": 0.8046478937834964,
+      "sharpe_full": 1.6114145549254233,
+      "sharpe_held": 2.055446774888354,
+      "max_drawdown_full": -0.27038342882327016,
+      "max_drawdown_held": -0.2703834288232702,
+      "win_rate": 0.5,
+      "pl_ratio": 1.7118112423955567,
+      "avg_hold_days": 19.136363636363637,
+      "n_hold_days": 421,
+      "n_total_days": 628
+    },
+    "exp1_ham_dynamic": {
+      "n_trades": 51,
+      "total_return": 4.0803674102333405,
+      "annual_return_full": 0.9098937362231017,
+      "annual_return_held": 0.9853432781540294,
+      "sharpe_full": 2.597621882047032,
+      "sharpe_held": 6.675577293881649,
+      "max_drawdown_full": -0.15417983439304994,
+      "max_drawdown_held": -0.15163473860887647,
+      "win_rate": 0.3137254901960784,
+      "pl_ratio": 1.5613111243598952,
+      "avg_hold_days": 1.392156862745098,
+      "n_hold_days": 122,
+      "n_total_days": 628
+    },
+    "ctrl2_fund_fixed20": {
+      "n_trades": 28,
+      "total_return": -0.1079441314076659,
+      "annual_return_full": -0.04445396637559351,
+      "annual_return_held": -0.011911083386959564,
+      "sharpe_full": 0.1068898385924586,
+      "sharpe_held": 0.19637158833471668,
+      "max_drawdown_full": -0.5185084046400736,
+      "max_drawdown_held": -0.5097498210530285,
+      "win_rate": 0.5714285714285714,
+      "pl_ratio": 0.9317627550499088,
+      "avg_hold_days": 20.0,
+      "n_hold_days": 560,
+      "n_total_days": 628
+    },
+    "exp2_fund_dynamic": {
+      "n_trades": 13,
+      "total_return": 0.1855357685679344,
+      "annual_return_full": 0.0701006464186984,
+      "annual_return_held": 0.0767744654931366,
+      "sharpe_full": 0.5335734876231916,
+      "sharpe_held": 1.3327028676210098,
+      "max_drawdown_full": -0.16842057999108048,
+      "max_drawdown_held": -0.16667058822635591,
+      "win_rate": 0.6923076923076923,
+      "pl_ratio": 1.426763540928225,
+      "avg_hold_days": 8.076923076923077,
+      "n_hold_days": 118,
+      "n_total_days": 628
+    }
+  },
+  "A1_fund_held_compare": {
+    "fund_dynamic_held": {
+      "annual_return_held": 0.0767744654931366,
+      "sharpe_held": 1.3327028676210098,
+      "max_drawdown_held": -0.16667058822635591
+    },
+    "fund_fixed20_held": {
+      "annual_return_held": -0.011911083386959564,
+      "sharpe_held": 0.19637158833471668,
+      "max_drawdown_held": -0.5097498210530285
+    }
+  },
+  "A2_ham_risk": {
+    "n_trades": 51,
+    "win_rate": 0.3137254901960784,
+    "avg_win": 0.04660416871763312,
+    "avg_loss": 0.0298493797876063,
+    "pl_ratio": 1.5613111243598952,
+    "median_net_ret": -0.010382892057026477,
+    "std_net_ret": 0.05373847460436005,
+    "max_single_win": 0.22222263717322607,
+    "max_single_loss": -0.10821764197174978,
+    "longest_loss_streak": 6,
+    "longest_loss_seq_drawdown": 0.0,
+    "hold_days_mean": 1.392156862745098,
+    "hold_d1_count": 40,
+    "hold_d1_pct": 0.7843137254901961,
+    "hold_d2_count": 6,
+    "hold_d2_pct": 0.11764705882352941,
+    "hold_long_count": 5,
+    "hold_long_pct": 0.09803921568627451
+  },
+  "B_corr": {
+    "signal_direction_corr_hold_days": 0.25677629550654774,
+    "n_both_hold_days": 17,
+    "daily_return_corr": -0.015836668377552432,
+    "ham_daily_vol": 0.2684262686352354,
+    "fund_daily_vol": 0.14650978880116036
+  },
+  "B_stage": {
+    "T1": {
+      "uptrend": {
+        "n_days": 110,
+        "total_return": 0.9231228818248229,
+        "ann_return": 3.420491243902049,
+        "sharpe": 3.229982272177544,
+        "max_drawdown": -0.18936357202757403
+      },
+      "downtrend": {
+        "n_days": 58,
+        "total_return": 0.1282765121393341,
+        "ann_return": 0.6823993167154614,
+        "sharpe": 2.742105538125703,
+        "max_drawdown": -0.04483675299216939
+      },
+      "range": {
+        "n_days": 460,
+        "total_return": 1.6461265815372985,
+        "ann_return": 0.6969915599104004,
+        "sharpe": 2.480946040011764,
+        "max_drawdown": -0.1118361457170966
+      }
+    },
+    "C1_ham": {
+      "uptrend": {
+        "n_days": 110,
+        "total_return": 1.11489953622976,
+        "ann_return": 4.4864934886759205,
+        "sharpe": 3.779081626197798,
+        "max_drawdown": -0.15417983439305
+      },
+      "downtrend": {
+        "n_days": 58,
+        "total_return": 0.12767262412777147,
+        "ann_return": 0.6785214113518547,
+        "sharpe": 3.2010038826017038,
+        "max_drawdown": -0.01544596406237996
+      },
+      "range": {
+        "n_days": 460,
+        "total_return": 1.1302096219496724,
+        "ann_return": 0.5083092806332565,
+        "sharpe": 2.3414904325779267,
+        "max_drawdown": -0.0840228411607039
+      }
+    },
+    "C2_fund": {
+      "uptrend": {
+        "n_days": 110,
+        "total_return": -0.09489672309986719,
+        "ann_return": -0.2027644147132469,
+        "sharpe": -1.1147048255166006,
+        "max_drawdown": -0.20491265551676038
+      },
+      "downtrend": {
+        "n_days": 58,
+        "total_return": 0.0004304005259061494,
+        "ann_return": 0.0018564967212160166,
+        "sharpe": 0.07148552788808418,
+        "max_drawdown": -0.03450335217156672
+      },
+      "range": {
+        "n_days": 460,
+        "total_return": 0.3092712877229469,
+        "ann_return": 0.15771875085371723,
+        "sharpe": 1.1172948624268577,
+        "max_drawdown": -0.11895843871635314
+      }
+    }
+  },
+  "B_improvement_source": {
+    "T1_vs_C1": {
+      "ret_delta": 0.0953302794328248,
+      "sharpe_delta": -0.057873582590984185,
+      "dd_delta": -0.015357500821286285
+    },
+    "T1_vs_C2": {
+      "ret_delta": 0.935123369237228,
+      "sharpe_delta": 2.006174811832856,
+      "dd_delta": -0.0011167552232557443
+    }
+  },
+  "T1_combined": {
+    "n_trades": 40,
+    "total_return": 4.741603501359221,
+    "annual_return_full": 1.0052240156559265,
+    "annual_return_held": 1.0826929519714121,
+    "sharpe_full": 2.539748299456048,
+    "sharpe_held": 4.633208349860973,
+    "max_drawdown_full": -0.16953733521433623,
+    "max_drawdown_held": -0.16553641611504116,
+    "win_rate": 0.5,
+    "pl_ratio": 2.839976614024572,
+    "avg_hold_days": 4.525,
+    "n_hold_days": 221,
+    "n_total_days": 628
+  },
+  "signal_state_counts": {
+    "flat": 405,
+    "ham_only": 105,
+    "fund_only": 101,
+    "both_opp": 10,
+    "both_same": 7
+  }
+}
