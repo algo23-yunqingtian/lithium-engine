@@ -1,0 +1,74 @@
+{
+  "config": {
+    "T1_vol_half": 0.4,
+    "T1_vol_full": 0.9,
+    "cost_per_side": 0.0015
+  },
+  "metrics_A": {
+    "total_return": 1.711879764716898,
+    "annual_return": 0.4875797812624989,
+    "sharpe": 2.7986662281593575,
+    "max_drawdown": -0.059946483064319656,
+    "calmar": 8.133584429621159,
+    "n_trades": 39
+  },
+  "metrics_B": {
+    "total_return": 1.2289907963148599,
+    "annual_return": 0.3758723247794351,
+    "sharpe": 2.273654692813911,
+    "max_drawdown": -0.0988825888077566,
+    "calmar": 3.801198262620231,
+    "n_trades": 39
+  },
+  "attribution": {
+    "n_position_days": 216,
+    "n_long_days": 148,
+    "n_short_days": 68,
+    "n_favorable_gaps": 121,
+    "n_unfavorable_gaps": 95,
+    "favorable_ratio": 0.5601851851851852,
+    "unfavorable_ratio": 0.4398148148148148,
+    "overnight_total_impact": 0.5003660764110938,
+    "intraday_total_impact": 0.8785266380103587,
+    "total_price_ret_B": 1.3788927144214524,
+    "overnight_pct_of_total": 0.36287527751644866,
+    "is_systematic": false,
+    "conclusion": "隔夜跳空非系统性：持仓216天中，有利跳空121次（56.0%），不利跳空95次（44.0%）。隔夜跳空贡献50.04%。"
+  },
+  "gap_stats": {
+    "total": {
+      "mean": 0.00213799206071004,
+      "median": 0.0008549444286121402,
+      "std": 0.013673926026296067,
+      "min": -0.09090909090909091,
+      "max": 0.12325804901489669
+    },
+    "in_position": {
+      "mean": 0.0037075781335332543,
+      "median": 0.002411631280441112,
+      "std": 0.01637473526141972,
+      "min": -0.09090909090909091,
+      "max": 0.0962962962962963
+    },
+    "long_only": {
+      "mean": 0.0043959559231563404,
+      "median": 0.0027175728179609374
+    },
+    "short_only": {
+      "mean": 0.0022093441208241847,
+      "median": 0.00110387517979564
+    }
+  },
+  "conclusion": {
+    "variant_A_annual": 0.4875797812624989,
+    "variant_B_annual": 0.3758723247794351,
+    "variant_A_calmar": 8.133584429621159,
+    "variant_B_calmar": 3.801198262620231,
+    "is_B_positive": true,
+    "annual_decay_pp": 11.17074564830638,
+    "calmar_decay": 4.332386167000928,
+    "verdict": "PROFITABLE",
+    "summary": "T1在真实时序下仍然盈利，但收益显著衰减。版本B年化37.6%（vs A 48.8%），衰减11pp。真实Calmar=3.80（vs A 8.13）。",
+    "recommendation": "可考虑实盘部署，但需按版本B的Calmar重新校准仓位"
+  }
+}
