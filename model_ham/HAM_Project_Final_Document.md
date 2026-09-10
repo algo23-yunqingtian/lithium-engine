@@ -475,7 +475,35 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 | exp429 每日入口 | `model_ham/exp429_production/run_daily.py` |
 | exp429 报告 | `reports/exp429_production_ready.md` |
 | exp429 实盘手册 | `model_ham/HANDOVER_exp429.md` |
+| exp430 影子盘运行器 | `model_ham/exp430_shadow_trading/shadow_runner.py` |
+| exp430 回填验证 | `model_ham/exp430_shadow_trading/backfill_shadow.py` |
+| exp430 报告生成器 | `model_ham/exp430_shadow_trading/report_generator.py` |
+| exp430 主入口 | `model_ham/exp430_shadow_trading/run_exp430.py` |
+| exp430 报告 | `reports/exp430_real_shadow_trading.md` |
+| exp430 影子盘日志 | `model_ham/exp430_shadow_trading/data/exp430_shadow_log.csv` |
 
 ---
 
-*生成时间：2026-09-10 | HAM 策略完整结题文档 | exp401~428 23轮迭代结题 | 含完整工作流(6步迭代)、T0/T1双档案(T1推荐实盘主力)、风险清单、数学附录、exp424样本外与参数鲁棒诊断、exp425分钟级进场仿真(9:01+10bp→28.9%/Calmar4.23 FEASIBLE)、exp426消融(投机主体=收益引擎-21.4pp/产业=方向过滤-11.3pp/Logit=状态增强-6.6pp/ADX=风控组件，四组件缺一不可)、exp427跨品种(锌NOT_TRANSFERABLE 2.0%/Calmar0.24,aux_confirm稀缺)、exp428滚动影子盘(STABLE:滚动每日估参34.0%/Calmar4.98,方向一致100%/Jaccard0.931/净值相关0.995,rank标准化吸收alpha/beta数值噪声,可实盘每日估参)、exp427-1极端压力测试(ROBUST:极端段年化50.8%>非极端26.3%反直觉,核心段51日净盈利+3.3%回撤-1.3%,ADX保护+4.9pp,滚动估参极端段+13.0%>一次性+12.2%,50bp滑点仍+11.7%年化,风控有效模型稳健)、exp429实盘工程化(PRODUCTION_READY:流水线封装D因子+信号+两套仓位,三维度监控告警OK67%/WARNING20%/CRITICAL13%,持续影子盘628日,配置A稳健34.0%/Calmar4.98/回撤-6.8%推荐主力 配置B激进37.4%/Calmar3.55/回撤-10.5%,回撤与exp426锚点完全一致,10条禁止交易红线+4层止损+告警响应SOP)*
+## 4.12 exp430：真实行情影子盘验证
+
+**目标**：对接实时碳酸锂期货行情，每日定时完整运行整套生产链路，仅记录信号/仓位/模拟盈亏，不发起真实下单。持续运行最少 20 个交易日，产出对比报告。
+
+**交付物**：
+1. `shadow_runner.py` — 每日数据获取（akshare Sina）+ 追加 + 流水线重跑 + 影子盘日志记录
+2. `backfill_shadow.py` — 用历史日K逐日回填20交易日验证框架完整性
+3. `report_generator.py` — 影子盘绩效对比报告生成器（vs 回测基准配置A年化34%/回撤-6.8%）
+4. `run_exp430.py` — 主入口（手动/ cron 适配/状态查询）
+5. cron 定时：每个交易日 15:30 自动运行
+
+**回填验证结论（20交易日 2026-08-14 ~ 2026-09-10）**：
+- 20 日全部成功运行，0 失败，框架完整性和稳定性验证通过
+- 策略全程空仓（pos_A=0），NAV 不变 — 风控机制正确运作（IC CRITICAL → 暂停交易）
+- 告警分布：OK 10% / CRITICAL 90%（vs 回测基准 OK 67% / CRITICAL 13%），当前处于因子失效期
+- 滑点/成交价偏差无法评估（无交易产生）
+- 持续 cron 运行已就绪，待策略重新开仓后积累有效绩效对比数据
+
+**关键发现**：20 日验证期恰逢碳酸锂价格暴跌期（155k→141k，-9%），市场结构突变导致 IC 持续 < 0，策略正确地选择了空仓等待。这验证了风控体系的有效性（告警 → 暂停 → 零回撤），但也暴露了样本期不足以覆盖策略完整周期的局限。
+
+---
+
+*生成时间：2026-09-10 | HAM 策略完整结题文档 | exp401~430 24轮迭代 | 含完整工作流(6步迭代)、T0/T1双档案(T1推荐实盘主力)、风险清单、数学附录、exp424样本外与参数鲁棒诊断、exp425分钟级进场仿真(9:01+10bp→28.9%/Calmar4.23 FEASIBLE)、exp426消融(投机主体=收益引擎-21.4pp/产业=方向过滤-11.3pp/Logit=状态增强-6.6pp/ADX=风控组件，四组件缺一不可)、exp427跨品种(锌NOT_TRANSFERABLE 2.0%/Calmar0.24,aux_confirm稀缺)、exp428滚动影子盘(STABLE:滚动每日估参34.0%/Calmar4.98,方向一致100%/Jaccard0.931/净值相关0.995,rank标准化吸收alpha/beta数值噪声,可实盘每日估参)、exp427-1极端压力测试(ROBUST:极端段年化50.8%>非极端26.3%反直觉,核心段51日净盈利+3.3%回撤-1.3%,ADX保护+4.9pp,滚动估参极端段+13.0%>一次性+12.2%,50bp滑点仍+11.7%年化,风控有效模型稳健)、exp429实盘工程化(PRODUCTION_READY:流水线封装D因子+信号+两套仓位,三维度监控告警OK67%/WARNING20%/CRITICAL13%,持续影子盘628日,配置A稳健34.0%/Calmar4.98/回撤-6.8%推荐主力 配置B激进37.4%/Calmar3.55/回撤-10.5%,回撤与exp426锚点完全一致,10条禁止交易红线+4层止损+告警响应SOP)、exp430真实行情影子盘(SHADOW_TRADING:20交易日回填验证框架完整,akshare实时行情接入+cron每日15:30,策略全程空仓因IC失效CRITICAL告警→风控有效零回撤,待策略重新开仓后评估绩效偏差)*

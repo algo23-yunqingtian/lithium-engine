@@ -1,0 +1,142 @@
+[
+  {
+    "timestamp": "2026-09-10T23:15:37.316786",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-14",
+    "symbol": "LC2701",
+    "close": 155240.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:39.382615",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-17",
+    "symbol": "LC2701",
+    "close": 153500.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:41.460390",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-18",
+    "symbol": "LC2701",
+    "close": 155400.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:43.634899",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-19",
+    "symbol": "LC2701",
+    "close": 150660.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:45.783618",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-20",
+    "symbol": "LC2701",
+    "close": 152160.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:47.887548",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-21",
+    "symbol": "LC2701",
+    "close": 158680.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:49.995544",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-24",
+    "symbol": "LC2701",
+    "close": 158860.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:52.089655",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-25",
+    "symbol": "LC2701",
+    "close": 150280.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:54.193459",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-26",
+    "symbol": "LC2701",
+    "close": 152160.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:56.350435",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-27",
+    "symbol": "LC2701",
+    "close": 152020.0
+  },
+  {
+    "timestamp": "2026-09-10T23:15:58.441859",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-28",
+    "symbol": "LC2701",
+    "close": 159600.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:00.750702",
+    "status": "SUCCESS",
+    "message": "回填 2026-08-31",
+    "symbol": "LC2701",
+    "close": 161000.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:03.006346",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-01",
+    "symbol": "LC2701",
+    "close": 157860.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:05.203683",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-02",
+    "symbol": "LC2701",
+    "close": 154780.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:07.367725",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-03",
+    "symbol": "LC2701",
+    "close": 149880.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:09.474396",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-04",
+    "symbol": "LC2701",
+    "close": 141940.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:11.782327",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-07",
+    "symbol": "LC2701",
+    "close": 142200.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:13.969411",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-08",
+    "symbol": "LC2701",
+    "close": 143480.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:16.083529",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-09",
+    "symbol": "LC2701",
+    "close": 142000.0
+  },
+  {
+    "timestamp": "2026-09-10T23:16:18.203706",
+    "status": "SUCCESS",
+    "message": "回填 2026-09-10",
+    "symbol": "LC2701",
+    "close": 141300.0
+  }
+]
