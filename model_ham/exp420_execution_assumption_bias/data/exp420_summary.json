@@ -1,0 +1,158 @@
+{
+  "metrics_A": {
+    "total_return": 10.892415075950694,
+    "annual_return": 1.6794975689544374,
+    "sharpe": 4.768327704666763,
+    "max_drawdown": 0.0,
+    "calmar": 0.0
+  },
+  "metrics_B": {
+    "total_return": -0.39345754154809043,
+    "annual_return": -0.18048030005052162,
+    "sharpe": -1.3311644412169916,
+    "max_drawdown": -0.48840905051749856,
+    "calmar": -0.36952693620089955
+  },
+  "trade_metrics_A": {
+    "n_trades": 51,
+    "win_rate": 0.3137254901960784,
+    "avg_win": 0.04660416871763312,
+    "avg_loss": -0.0298493797876063,
+    "avg_net_ret": -0.005863952805570402,
+    "avg_hold_days": 1.392156862745098,
+    "hold_days_1": 40,
+    "hold_days_2": 6,
+    "hold_days_3_plus": 5
+  },
+  "trade_metrics_B": {
+    "n_trades": 51,
+    "win_rate": 0.3137254901960784,
+    "avg_win": 0.04585602862258025,
+    "avg_loss": -0.034509327700247984,
+    "avg_net_ret": -0.009296666893086185,
+    "avg_hold_days": 1.4705882352941178,
+    "hold_days_1": 36,
+    "hold_days_2": 10,
+    "hold_days_3_plus": 5
+  },
+  "audit_ohlc": {
+    "total_rows": 760,
+    "rows_in_range": 628,
+    "date_range": "2023-07-21 ~ 2026-09-07",
+    "ohlc_columns": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "position",
+      "settle"
+    ],
+    "has_open": true,
+    "has_high": true,
+    "has_low": true,
+    "has_close": true,
+    "has_settle": true,
+    "has_volume": true,
+    "has_position": true,
+    "open_non_null_pct": 100.0,
+    "high_non_null_pct": 100.0,
+    "low_non_null_pct": 100.0,
+    "close_non_null_pct": 100.0,
+    "ham_uses_only_close": true,
+    "ham_factor_formula_uses": "P(t) and P(t-1) only, both from close column",
+    "has_1min_kline": false,
+    "note_1min": "当前数据集不含1分钟K线，无法取9:01分时均价。如需9:01成交价格，必须额外引入分钟级别行情数据。",
+    "upper_shadow_mean": 1015.3662420382166,
+    "lower_shadow_mean": 1028.343949044586,
+    "daily_range_mean": 4236.4331210191085,
+    "has_upper_shadow": true,
+    "has_lower_shadow": true
+  },
+  "audit_hold": {
+    "avg_hold_A": 1.392156862745098,
+    "avg_hold_B": 1.4705882352941178,
+    "source_of_1_4_days": "所有开平仓决策仅在每日收盘执行判断；成交只能在开盘/收盘两个离散时间点，不存在盘中平仓。hold_days=1表示T日开仓T+1日平仓（最短持仓1个交易日），hold_days=2表示T日开仓T+2日平仓。1.4天是这些1天和2天持仓的加权统计平均值，不是单笔持仓可在半天平仓。",
+    "discrete_execution_times": [
+      "每日收盘（15:00）",
+      "每日开盘（集合竞价，约9:00/10:15）"
+    ],
+    "no_intraday_execution": true,
+    "note": "当前数据集为日K，无1分钟K线，无法模拟盘中平仓。如需9:01分钟均价成交，需引入分钟级别行情数据。"
+  },
+  "hold_distribution_A": {
+    "1": 40,
+    "2": 6,
+    "3": 3,
+    "4": 1,
+    "6": 1
+  },
+  "hold_distribution_B": {
+    "1": 36,
+    "2": 10,
+    "3": 3,
+    "4": 1,
+    "6": 1
+  },
+  "trade_timeline_samples": [
+    {
+      "trade_no": 1,
+      "entry_date": "2024-04-01",
+      "exit_date": "2024-04-02",
+      "direction": 1,
+      "exit_reason": "gmm_transition",
+      "entry_price_close": 112600.0,
+      "exit_price_close": 111000.0,
+      "entry_open_next_day": 112800.0,
+      "exit_open_next_day": 111550.0,
+      "timeline": {
+        "T_day_decision": "T日(2024-04-01)收盘后计算信号",
+        "T_day_close_price": "112600 (版本A成交价)",
+        "T+1_day_open": "112800 (版本B成交价)",
+        "exit_T_day_decision": "T日(2024-04-02)收盘检查平仓条件",
+        "exit_T_day_close_price": "111000 (版本A平仓价)",
+        "exit_T+1_day_open": "111550 (版本B平仓价)"
+      }
+    },
+    {
+      "trade_no": 2,
+      "entry_date": "2024-08-14",
+      "exit_date": "2024-08-15",
+      "direction": -1,
+      "exit_reason": "neutral_revert",
+      "entry_price_close": 73450.0,
+      "exit_price_close": 72400.0,
+      "entry_open_next_day": 73600.0,
+      "exit_open_next_day": 73200.0,
+      "timeline": {
+        "T_day_decision": "T日(2024-08-14)收盘后计算信号",
+        "T_day_close_price": "73450 (版本A成交价)",
+        "T+1_day_open": "73600 (版本B成交价)",
+        "exit_T_day_decision": "T日(2024-08-15)收盘检查平仓条件",
+        "exit_T_day_close_price": "72400 (版本A平仓价)",
+        "exit_T+1_day_open": "73200 (版本B平仓价)"
+      }
+    },
+    {
+      "trade_no": 3,
+      "entry_date": "2024-09-02",
+      "exit_date": "2024-09-03",
+      "direction": -1,
+      "exit_reason": "neutral_revert",
+      "entry_price_close": 75200.0,
+      "exit_price_close": 74900.0,
+      "entry_open_next_day": 75300.0,
+      "exit_open_next_day": 74050.0,
+      "timeline": {
+        "T_day_decision": "T日(2024-09-02)收盘后计算信号",
+        "T_day_close_price": "75200 (版本A成交价)",
+        "T+1_day_open": "75300 (版本B成交价)",
+        "exit_T_day_decision": "T日(2024-09-03)收盘检查平仓条件",
+        "exit_T_day_close_price": "74900 (版本A平仓价)",
+        "exit_T+1_day_open": "74050 (版本B平仓价)"
+      }
+    }
+  ],
+  "n_trades_A": 51,
+  "n_trades_B": 51
+}

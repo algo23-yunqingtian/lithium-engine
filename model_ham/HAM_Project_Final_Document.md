@@ -166,6 +166,8 @@ T 日收盘后:
 | 样本外未验证 | 🔴 高 | exp412~418 共同遗留，2026Q4+ 未验证 |
 | 无显式止损 | 🟡 中 | exp415 B2 跳空下 4 条平仓规则失效 |
 | 期权对冲无价值 | 🟢 低 | exp416 §4 权利金占基准年化14.3%，赔付≈0 |
+| 日度回测局限 | 🔴 高 | 每日仅收盘一次评估信号，无法响应盘中行情，不能实现盘中平仓；exp420验证T+1开盘成交后年化从+167.9%衰减至-18.0% |
+| 成交价格假设风险 | 🔴 高 | 日K开盘价=集合竞价撮合价，不等于实盘一定可以足额成交，存在滑点、流动性风险；如需9:01一分钟均价成交，需要引入分钟K数据集 |
 
 ### 3.2 失效行情
 
@@ -268,6 +270,7 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 | exp416 报告 | `reports/exp416_tail_risk_protect.md` |
 | exp417 报告 | `reports/exp417_ham_model_theory_audit.md` |
 | exp418 报告 | `reports/exp418_production_prepare.md` |
+| exp420 报告 | `reports/exp420_execution_assumption_bias.md` |
 
 ---
 
