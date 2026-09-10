@@ -1,0 +1,7 @@
+metric,baseline_median,warn_threshold,crit_threshold,direction,note
+IC_5d,0.206,-0.5307,-0.8346,low,disagreement与未来5日收益相关性; 越低因子失效越严重
+PL_Ratio,1.6,0.08,0.0,low,"平均盈利/平均亏损; 跌破1=赔率转负, 策略结构性恶化"
+Avg_Hold_Days,2.4,1.9,1.0,low,"平均持仓天数; 过低=追涨杀跌过频, 过高=信号迟钝"
+Win_Rate,0.5,0.312,0.025,low,盈利交易占比; 跌破基准=策略盈利能力衰减
+Avg_Deviation,0.515,0.7081,0.9991,high,持仓期分歧均值; 过高=市场极端失衡(HAM趋势盲区风险)
+Realized_Vol,0.3572,0.5085,0.5963,high,"月度年化波动率; 过高=市场极端波动, 持仓风险放大"

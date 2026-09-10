@@ -1,0 +1,39 @@
+{
+  "default_thresholds": {
+    "adx_thr": 28.0,
+    "cont_thr": 0.7,
+    "breakout_thr": 1.5
+  },
+  "default_stats": {
+    "n_alert_days": 20,
+    "n_days": 628,
+    "ham_avg_ret_alert": 0.001724,
+    "ham_avg_ret_normal": 0.00239,
+    "acc_3d": 0.35,
+    "false_3d": 0.65,
+    "ham_avg_3d": -0.005605,
+    "n_3d": 20,
+    "acc_5d": 0.35,
+    "false_5d": 0.65,
+    "ham_avg_5d": -0.008971,
+    "n_5d": 20,
+    "acc_10d": 0.3,
+    "false_10d": 0.7,
+    "ham_avg_10d": -0.004226,
+    "n_10d": 20
+  },
+  "best_thresholds": {
+    "adx_thr": 28.0,
+    "cont_thr": 0.7
+  },
+  "best_stats": {
+    "adx_thr": 28.0,
+    "cont_thr": 0.7,
+    "n_alert": 20.0,
+    "alert_ratio": 0.031847,
+    "acc_5d": 0.35,
+    "ham_avg_5d": -0.008971,
+    "ham_avg_alert": 0.001724,
+    "ham_avg_normal": 0.00239
+  }
+}
