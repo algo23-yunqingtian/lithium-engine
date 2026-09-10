@@ -38,3 +38,4 @@ backup_*/
 .idea/
 *.swp
 .DS_Store
+*.log
