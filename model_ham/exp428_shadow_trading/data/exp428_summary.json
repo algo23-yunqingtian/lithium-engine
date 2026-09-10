@@ -1,0 +1,76 @@
+{
+  "config": {
+    "start": "2024-02-01",
+    "end": "2026-09-07",
+    "n_days": 628,
+    "slip_bp": 10.0,
+    "adx_threshold": 30.0,
+    "adx_scale": 0.3,
+    "rng_seed": 20260910,
+    "est_train_window": 180,
+    "alpha_fixed": 0.3,
+    "beta_fixed": 0.5,
+    "n_alpha_grid": 11,
+    "n_beta_grid": 11
+  },
+  "performance": {
+    "oneshot": {
+      "total_return": 0.8907816066237855,
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901,
+      "calmar": 4.225856312165608,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.0,
+      "ic": 0.1963886191100946,
+      "ic_rank": 0.1885473032011553
+    },
+    "rolling": {
+      "total_return": 1.0876597952249898,
+      "annual_return": 0.3404575841692723,
+      "sharpe": 2.2929095178077206,
+      "max_drawdown": -0.06830073619489953,
+      "calmar": 4.984683960034629,
+      "n_trades": 135,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.0,
+      "ic": 0.21907380545869326,
+      "ic_rank": 0.21292970590803412
+    },
+    "delta_annual_pp": 5.182848699450027,
+    "delta_sharpe": 0.20063820973684976,
+    "delta_calmar": 0.7588276478690208,
+    "delta_drawdown_pp": -5.134781488891349e-14,
+    "delta_trades": 6
+  },
+  "param_stability": {
+    "alpha_mean": 0.17756944444444442,
+    "alpha_std": 0.14670097386529066,
+    "alpha_cv": 0.8261611355730096,
+    "alpha_min": 0.1,
+    "alpha_max": 0.55,
+    "beta_mean": 0.3465277777777777,
+    "beta_std": 0.08442056954160163,
+    "beta_cv": 0.2436184772342813,
+    "beta_min": 0.3,
+    "beta_max": 0.5,
+    "n_fitted_days": 720,
+    "alpha_p25": 0.1,
+    "alpha_p75": 0.2,
+    "beta_p25": 0.3,
+    "beta_p75": 0.3,
+    "alpha_dev_vs_fixed_pct": -40.81018518518519,
+    "beta_dev_vs_fixed_pct": -30.694444444444457
+  },
+  "signal_consistency": {
+    "hold_days_oneshot": 216,
+    "hold_days_rolling": 232,
+    "hold_overlap": 216,
+    "hold_jaccard": 0.9310344827586207,
+    "dir_agreement_pct": 100.0,
+    "equity_correlation": 0.9949695035972939
+  },
+  "verdict": "STABLE",
+  "verdict_reason": "滚动每日估参生成的高度无未来数据信号, 与一次性回测高度一致: 同持仓日方向一致率100%, 持仓Jaccard=0.931, 净值相关=0.9950, 年化Δ=+5.2pp。HAM 经 rolling.rank(pct) 标准化后对 alpha/beta 精确值不敏感, 参数数值波动(网格量化噪声)被标准化吸收, 不传导到信号层。模型可实盘滚动运行。"
+}
