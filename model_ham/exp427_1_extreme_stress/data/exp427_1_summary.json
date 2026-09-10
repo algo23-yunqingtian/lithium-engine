@@ -1,0 +1,232 @@
+{
+  "config": {
+    "start": "2024-02-01",
+    "end": "2026-09-07",
+    "n_days": 628,
+    "slip_bp": 10.0,
+    "adx_threshold": 30.0,
+    "adx_scale": 0.3,
+    "mom20_thr": 0.25,
+    "vol_mult": 2.0,
+    "gap_thr": 0.08,
+    "rng_seed": 20260910
+  },
+  "full_sample": {
+    "total_return": 0.8907816066237855,
+    "annual_return": 0.28862909717477203,
+    "sharpe": 2.092271308070871,
+    "max_drawdown": -0.06830073619489901,
+    "calmar": 4.225856312165608,
+    "n_trades": 129,
+    "exec_slip_bp": 10.0,
+    "gap_filter_thr": 0.0
+  },
+  "extreme_identification": {
+    "n_extreme_days": 70,
+    "n_segments": 3,
+    "segments": [
+      {
+        "start_idx": 354,
+        "end_idx": 356,
+        "count": 3,
+        "start_date": "2025-07-24",
+        "end_date": "2025-07-28",
+        "peak_vol_ann": 0.5956774494044434,
+        "peak_abs_mom20": 0.27203791469194316,
+        "peak_abs_ret": 0.10521764197174978
+      },
+      {
+        "start_idx": 455,
+        "end_idx": 505,
+        "count": 51,
+        "start_date": "2025-12-22",
+        "end_date": "2026-03-12",
+        "peak_vol_ann": 1.1778072781597955,
+        "peak_abs_mom20": 0.7087597216537045,
+        "peak_abs_ret": 0.12300895244738984
+      },
+      {
+        "start_idx": 543,
+        "end_idx": 545,
+        "count": 3,
+        "start_date": "2026-05-11",
+        "end_date": "2026-05-13",
+        "peak_vol_ann": 0.4082121074580115,
+        "peak_abs_mom20": 0.3366762177650431,
+        "peak_abs_ret": 0.04304029304029304
+      }
+    ]
+  },
+  "extreme_vs_normal": [
+    {
+      "group": "极端段日",
+      "n_days": 70,
+      "total_return": 0.1219720353559004,
+      "annual_return": 0.5083678211724996,
+      "sharpe": 2.4977166436461737,
+      "max_drawdown": -0.04251574964348925
+    },
+    {
+      "group": "非极端段日",
+      "n_days": 558,
+      "total_return": 0.6852306002653721,
+      "annual_return": 0.26342620922896787,
+      "sharpe": 2.041753322563258,
+      "max_drawdown": -0.05757202377196729
+    },
+    {
+      "group": "全样本",
+      "n_days": 628,
+      "total_return": 0.8907816066237855,
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901
+    }
+  ],
+  "segment_performance": [
+    {
+      "n_days": 3,
+      "total_return": -0.03923266638487799,
+      "annual_return": -0.9643943398991153,
+      "sharpe": -15.823783676132072,
+      "max_drawdown": -0.009603624664199863,
+      "final_eq": 0.960767333615122,
+      "start_date": "2025-07-24",
+      "end_date": "2025-07-28",
+      "count": 3
+    },
+    {
+      "n_days": 51,
+      "total_return": 0.032737808802460355,
+      "annual_return": 0.1710590874326856,
+      "sharpe": 2.770334659116692,
+      "max_drawdown": -0.013022131026812,
+      "final_eq": 1.0327378088024604,
+      "start_date": "2025-12-22",
+      "end_date": "2026-03-12",
+      "count": 51
+    },
+    {
+      "n_days": 3,
+      "total_return": 0.018361211955420842,
+      "annual_return": 3.5549901034399394,
+      "sharpe": 8.353171231770784,
+      "max_drawdown": -0.006110999633391509,
+      "final_eq": 1.0183612119554208,
+      "start_date": "2026-05-11",
+      "end_date": "2026-05-13",
+      "count": 3
+    }
+  ],
+  "adx_protection": [
+    {
+      "config": "ADX降权×0.3(基准)",
+      "extreme_ann": 13.68680550404829,
+      "extreme_dd": -0.04251574964348925
+    },
+    {
+      "config": "无ADX降权",
+      "extreme_ann": 14.482009765061079,
+      "extreme_dd": -0.09148317665715217
+    }
+  ],
+  "rolling_vs_oneshot_extreme": [
+    {
+      "config": "一次性(固定参数)",
+      "extreme_ann": 13.68680550404829,
+      "extreme_dd": -0.04251574964348925,
+      "extreme_total": 0.1219720353559004
+    },
+    {
+      "config": "滚动(每日估参)",
+      "extreme_ann": 13.893630578188835,
+      "extreme_dd": -0.04251574964348925,
+      "extreme_total": 0.13029702893476114
+    }
+  ],
+  "stress_slippage": [
+    {
+      "slip_bp": 10.0,
+      "full_ann": 0.28862909717477203,
+      "full_calmar": 4.225856312165608,
+      "full_dd": -0.06830073619489901,
+      "extreme_dd": -0.04251574964348925,
+      "extreme_total": 0.1219720353559004
+    },
+    {
+      "slip_bp": 20.0,
+      "full_ann": 0.24355186133447648,
+      "full_calmar": 3.221484053735963,
+      "full_dd": -0.07560237991928868,
+      "extreme_dd": -0.04498460940025141,
+      "extreme_total": 0.10763468175878499
+    },
+    {
+      "slip_bp": 30.0,
+      "full_ann": 0.1999976440762432,
+      "full_calmar": 2.4123226060421703,
+      "full_dd": -0.08290667408053423,
+      "extreme_dd": -0.04745034446335664,
+      "extreme_total": 0.09346544372323051
+    },
+    {
+      "slip_bp": 50.0,
+      "full_ann": 0.1172610745509759,
+      "full_calmar": 1.2044318903497768,
+      "full_dd": -0.09735799549190144,
+      "extreme_dd": -0.05237244816924506,
+      "extreme_total": 0.06562411050356776
+    }
+  ],
+  "stress_gap_filter": [
+    {
+      "gap_thr": 0.0,
+      "n_filtered": 0,
+      "full_ann": 0.28862909717477203,
+      "full_dd": -0.06830073619489901,
+      "extreme_dd": -0.04251574964348925,
+      "extreme_total": 0.1219720353559004
+    },
+    {
+      "gap_thr": 0.05,
+      "n_filtered": 8,
+      "full_ann": 0.2874903298899072,
+      "full_dd": -0.06691171024409025,
+      "extreme_dd": -0.042493487298812596,
+      "extreme_total": 0.11784256275591454
+    },
+    {
+      "gap_thr": 0.08,
+      "n_filtered": 5,
+      "full_ann": 0.28891670136365755,
+      "full_dd": -0.06913331852910425,
+      "extreme_dd": -0.042493487298812596,
+      "extreme_total": 0.12363136558077281
+    },
+    {
+      "gap_thr": 0.1,
+      "n_filtered": 1,
+      "full_ann": 0.28862909717477203,
+      "full_dd": -0.06830073619489901,
+      "extreme_dd": -0.04251574964348925,
+      "extreme_total": 0.1219720353559004
+    }
+  ],
+  "verdict": "ROBUST",
+  "verdict_reason": "全样本回撤-6.8%(<20%阈), ADX降权在极端段回撤改善+4.9pp, 50bp极端滑点下回撤仍-9.7%(<30%阈)。HAM-T1+ADX在极端行情下稳健, 风控有效。",
+  "verdict_data": {
+    "full_sample_annual": 0.28862909717477203,
+    "full_sample_calmar": 4.225856312165608,
+    "full_sample_max_dd": -0.06830073619489901,
+    "n_extreme_days": 70,
+    "n_extreme_segments": 3,
+    "extreme_vs_normal_annual": {
+      "extreme": 0.5083678211724996,
+      "normal": 0.26342620922896787
+    },
+    "adx_protection_extreme_dd_improve_pp": 4.896742701366291,
+    "rolling_vs_oneshot_extreme_ann": 0.20682507414054463,
+    "worst_segment_dd": -0.013022131026812,
+    "extreme_dd_at_50bp": -0.09735799549190144
+  }
+}
