@@ -326,6 +326,31 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 
 ---
 
+### 4.8 exp427：HAM-T1+ADX 跨品种泛化测试（锌 Zn）
+
+将 exp425/exp426 锚定的完整 HAM 框架迁移至沪锌期货，9:01+10bp滑点，样本内外回测，评估跨品种复用性。纯参数化迁移（monkey-patch数据源，零逻辑复制），HAM全部信号逻辑/阈值/风控与碳酸锂一致。
+
+**跨品种绩效对比：**
+
+| 品种 | 口径 | 年化 | Calmar | IC | 笔数 |
+|:---|:---|:---:|:---:|:---:|:---:|
+| 碳酸锂(LC) | 9:01+10bp | 28.9% | 4.23 | +0.196 | 129 |
+| 锌(Zn) | 全样本 | 2.0% | 0.24 | +0.205 | 47 |
+| 锌(Zn) | 样本内 | 0.1% | 0.01 | +0.157 | 30 |
+| 锌(Zn) | 样本外 | 5.7% | 1.13 | +0.266 | 17 |
+
+**判定：NOT_TRANSFERABLE（不可直接迁移）**。锌全样本Calmar0.24远低于LC的4.23。
+
+**迁移失败根因**：HAM双信号共振开仓要求 `main_trigger AND aux_confirm`。锌 aux_confirm 仅76次（LC422次），双共振开仓仅13次（LC66次）。根因：aux_confirm依赖仓单边际变号(td_flip)，锌的需求侧（镀锌产量）周频变化缓慢、符号极少翻转，不产生td_flip——这是品种微观结构差异，非参数调优可解。
+
+**跨品种验证 exp426 结论**：exp426证明投机主体是收益引擎、产业主体是方向锚；但锌上即使D_c/D_f存在，辅助确认信号稀缺使双共振无法充分展开。HAM有效性依赖品种特有的"投机-产业分歧动态"，锌的工业稳定需求不支持原样复用。
+
+**可挽救方向**：替换辅助信号(TC变号/LME比价)、真实锌成本曲线重构P_fund、改测铅。
+
+详见报告 `reports/exp427_cross_variety.md`。
+
+---
+
 ## 文件索引
 
 | 模块 | 文件 |
@@ -350,6 +375,9 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 | exp425 引擎 | `model_ham/exp425_minute_execution/exp425_engine.py` |
 | exp426 消融实验 | `reports/exp426_ablation.md` |
 | exp426 引擎 | `model_ham/exp426_ablation/exp426_engine.py` |
+| exp427 跨品种泛化 | `reports/exp427_cross_variety.md` |
+| exp427 引擎 | `model_ham/exp427_cross_variety/exp427_engine.py` |
+| exp427 锌数据层 | `model_ham/exp427_cross_variety/build_zinc_data.py` |
 
 ---
 
