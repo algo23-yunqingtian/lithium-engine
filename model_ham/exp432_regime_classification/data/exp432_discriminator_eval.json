@@ -1,0 +1,398 @@
+{
+  "discriminator_eval": {
+    "A1 相对高波动(rvol_rel>1.5)": {
+      "name": "A1 相对高波动(rvol_rel>1.5)",
+      "total_hit_days": 120,
+      "hit_rate_pct": 24.539877300613497,
+      "total_truth_events": 20,
+      "tp_forward": 83,
+      "fp_forward": 37,
+      "precision_pct": 69.16666666666667,
+      "missed_events": 14,
+      "recall_pct": 30.000000000000004,
+      "f1_pct": 41.84873949579832,
+      "false_positive_rate_pct": 30.833333333333336,
+      "false_negative_rate_pct": 70.0
+    },
+    "A2 持仓撤离(pos20d<-8%)": {
+      "name": "A2 持仓撤离(pos20d<-8%)",
+      "total_hit_days": 191,
+      "hit_rate_pct": 39.059304703476485,
+      "total_truth_events": 20,
+      "tp_forward": 123,
+      "fp_forward": 68,
+      "precision_pct": 64.3979057591623,
+      "missed_events": 7,
+      "recall_pct": 65.0,
+      "f1_pct": 64.69755209387012,
+      "false_positive_rate_pct": 35.602094240837694,
+      "false_negative_rate_pct": 35.0
+    },
+    "A3 基差骤降(chg5<-1.5)": {
+      "name": "A3 基差骤降(chg5<-1.5)",
+      "total_hit_days": 149,
+      "hit_rate_pct": 30.470347648261757,
+      "total_truth_events": 20,
+      "tp_forward": 98,
+      "fp_forward": 51,
+      "precision_pct": 65.77181208053692,
+      "missed_events": 1,
+      "recall_pct": 95.0,
+      "f1_pct": 77.72907534961386,
+      "false_positive_rate_pct": 34.22818791946309,
+      "false_negative_rate_pct": 5.0
+    },
+    "★ A组合(OR:任一命中)": {
+      "name": "★ A组合(OR:任一命中)",
+      "total_hit_days": 314,
+      "hit_rate_pct": 64.21267893660531,
+      "total_truth_events": 20,
+      "tp_forward": 203,
+      "fp_forward": 111,
+      "precision_pct": 64.64968152866241,
+      "missed_events": 1,
+      "recall_pct": 95.0,
+      "f1_pct": 76.93995611410332,
+      "false_positive_rate_pct": 35.35031847133758,
+      "false_negative_rate_pct": 5.0
+    },
+    "B1 持仓累积(pos20d>8%)": {
+      "name": "B1 持仓累积(pos20d>8%)",
+      "total_hit_days": 185,
+      "hit_rate_pct": 37.83231083844581,
+      "total_truth_events": 9,
+      "tp_forward": 55,
+      "fp_forward": 130,
+      "precision_pct": 29.72972972972973,
+      "missed_events": 4,
+      "recall_pct": 55.55555555555556,
+      "f1_pct": 38.732394366197184,
+      "false_positive_rate_pct": 70.27027027027027,
+      "false_negative_rate_pct": 44.44444444444444
+    },
+    "B2 成交放量(vol20d>20%)": {
+      "name": "B2 成交放量(vol20d>20%)",
+      "total_hit_days": 175,
+      "hit_rate_pct": 35.787321063394685,
+      "total_truth_events": 9,
+      "tp_forward": 58,
+      "fp_forward": 117,
+      "precision_pct": 33.14285714285714,
+      "missed_events": 4,
+      "recall_pct": 55.55555555555556,
+      "f1_pct": 41.5175375805297,
+      "false_positive_rate_pct": 66.85714285714286,
+      "false_negative_rate_pct": 44.44444444444444
+    },
+    "B3 活跃度偏高(vol_rel>1.2)": {
+      "name": "B3 活跃度偏高(vol_rel>1.2)",
+      "total_hit_days": 132,
+      "hit_rate_pct": 26.993865030674847,
+      "total_truth_events": 9,
+      "tp_forward": 49,
+      "fp_forward": 83,
+      "precision_pct": 37.121212121212125,
+      "missed_events": 1,
+      "recall_pct": 88.88888888888889,
+      "f1_pct": 52.37140948563794,
+      "false_positive_rate_pct": 62.878787878787875,
+      "false_negative_rate_pct": 11.11111111111111
+    },
+    "B4 深度贴水(basis<-2%)": {
+      "name": "B4 深度贴水(basis<-2%)",
+      "total_hit_days": 174,
+      "hit_rate_pct": 35.58282208588957,
+      "total_truth_events": 9,
+      "tp_forward": 53,
+      "fp_forward": 121,
+      "precision_pct": 30.45977011494253,
+      "missed_events": 3,
+      "recall_pct": 66.66666666666667,
+      "f1_pct": 41.81459566074951,
+      "false_positive_rate_pct": 69.54022988505747,
+      "false_negative_rate_pct": 33.33333333333333
+    },
+    "B5 相对低波动(rvol_rel<0.85)": {
+      "name": "B5 相对低波动(rvol_rel<0.85)",
+      "total_hit_days": 148,
+      "hit_rate_pct": 30.265848670756647,
+      "total_truth_events": 9,
+      "tp_forward": 56,
+      "fp_forward": 92,
+      "precision_pct": 37.83783783783784,
+      "missed_events": 7,
+      "recall_pct": 22.22222222222222,
+      "f1_pct": 28.000000000000004,
+      "false_positive_rate_pct": 62.16216216216216,
+      "false_negative_rate_pct": 77.77777777777779
+    },
+    "★ B组合(>=2项命中)": {
+      "name": "★ B组合(>=2项命中)",
+      "total_hit_days": 241,
+      "hit_rate_pct": 49.284253578732105,
+      "total_truth_events": 9,
+      "tp_forward": 75,
+      "fp_forward": 166,
+      "precision_pct": 31.12033195020747,
+      "missed_events": 3,
+      "recall_pct": 66.66666666666667,
+      "f1_pct": 42.432814710042436,
+      "false_positive_rate_pct": 68.87966804979253,
+      "false_negative_rate_pct": 33.33333333333333
+    }
+  },
+  "lead_times": {
+    "A1 相对高波动(rvol_rel>1.5)": {
+      "n_events": 20,
+      "n_with_prior_hit": 11,
+      "avg_lead_days": 25.363636363636363,
+      "median_lead_days": 10.0,
+      "min_lead_days": 1,
+      "max_lead_days": 96
+    },
+    "A2 持仓撤离(pos20d<-8%)": {
+      "n_events": 20,
+      "n_with_prior_hit": 17,
+      "avg_lead_days": 6.882352941176471,
+      "median_lead_days": 2.0,
+      "min_lead_days": 1,
+      "max_lead_days": 23
+    },
+    "A3 基差骤降(chg5<-1.5)": {
+      "n_events": 20,
+      "n_with_prior_hit": 18,
+      "avg_lead_days": 4.444444444444445,
+      "median_lead_days": 4.5,
+      "min_lead_days": 1,
+      "max_lead_days": 10
+    },
+    "★ A组合(OR:任一命中)": {
+      "n_events": 20,
+      "n_with_prior_hit": 18,
+      "avg_lead_days": 2.611111111111111,
+      "median_lead_days": 1.0,
+      "min_lead_days": 1,
+      "max_lead_days": 10
+    },
+    "B1 持仓累积(pos20d>8%)": {
+      "n_events": 9,
+      "n_with_prior_hit": 9,
+      "avg_lead_days": 19.666666666666668,
+      "median_lead_days": 10.0,
+      "min_lead_days": 1,
+      "max_lead_days": 63
+    },
+    "B2 成交放量(vol20d>20%)": {
+      "n_events": 9,
+      "n_with_prior_hit": 9,
+      "avg_lead_days": 10.11111111111111,
+      "median_lead_days": 3.0,
+      "min_lead_days": 1,
+      "max_lead_days": 32
+    },
+    "B3 活跃度偏高(vol_rel>1.2)": {
+      "n_events": 9,
+      "n_with_prior_hit": 9,
+      "avg_lead_days": 8.666666666666666,
+      "median_lead_days": 3.0,
+      "min_lead_days": 1,
+      "max_lead_days": 35
+    },
+    "B4 深度贴水(basis<-2%)": {
+      "n_events": 9,
+      "n_with_prior_hit": 7,
+      "avg_lead_days": 5.714285714285714,
+      "median_lead_days": 1.0,
+      "min_lead_days": 1,
+      "max_lead_days": 32
+    },
+    "B5 相对低波动(rvol_rel<0.85)": {
+      "n_events": 9,
+      "n_with_prior_hit": 7,
+      "avg_lead_days": 41.42857142857143,
+      "median_lead_days": 20.0,
+      "min_lead_days": 1,
+      "max_lead_days": 121
+    },
+    "★ B组合(>=2项命中)": {
+      "n_events": 9,
+      "n_with_prior_hit": 9,
+      "avg_lead_days": 9.333333333333334,
+      "median_lead_days": 1.0,
+      "min_lead_days": 1,
+      "max_lead_days": 34
+    }
+  },
+  "ic_alert_compare": {
+    "A组合(价格单边)": {
+      "n_compared": 17,
+      "avg_diff_days": -43.705882352941174,
+      "median_diff_days": -27.0,
+      "n_new_earlier": 1,
+      "n_ic_earlier": 14,
+      "new_earlier_pct": 5.88235294117647,
+      "detail": [
+        {
+          "event_start": "2024-07-01",
+          "new_alert_day": "2024-06-28",
+          "ic_alert_day": "2024-06-28",
+          "diff_days_new_earlier": 0
+        },
+        {
+          "event_start": "2024-07-11",
+          "new_alert_day": "2024-07-01",
+          "ic_alert_day": "2024-07-10",
+          "diff_days_new_earlier": 7
+        },
+        {
+          "event_start": "2024-10-14",
+          "new_alert_day": "2024-10-11",
+          "ic_alert_day": "2024-07-25",
+          "diff_days_new_earlier": -38
+        },
+        {
+          "event_start": "2025-06-16",
+          "new_alert_day": "2025-06-12",
+          "ic_alert_day": "2024-07-25",
+          "diff_days_new_earlier": -132
+        },
+        {
+          "event_start": "2025-07-04",
+          "new_alert_day": "2025-07-02",
+          "ic_alert_day": "2024-07-25",
+          "diff_days_new_earlier": -146
+        },
+        {
+          "event_start": "2025-07-16",
+          "new_alert_day": "2025-07-02",
+          "ic_alert_day": "2024-07-25",
+          "diff_days_new_earlier": -146
+        },
+        {
+          "event_start": "2025-09-17",
+          "new_alert_day": "2025-09-16",
+          "ic_alert_day": "2025-08-21",
+          "diff_days_new_earlier": -18
+        },
+        {
+          "event_start": "2025-09-30",
+          "new_alert_day": "2025-09-29",
+          "ic_alert_day": "2025-08-21",
+          "diff_days_new_earlier": -27
+        },
+        {
+          "event_start": "2025-12-05",
+          "new_alert_day": "2025-12-04",
+          "ic_alert_day": "2025-11-18",
+          "diff_days_new_earlier": -12
+        },
+        {
+          "event_start": "2026-01-30",
+          "new_alert_day": "2026-01-29",
+          "ic_alert_day": "2025-11-18",
+          "diff_days_new_earlier": -50
+        },
+        {
+          "event_start": "2026-02-05",
+          "new_alert_day": "2026-02-04",
+          "ic_alert_day": "2025-11-18",
+          "diff_days_new_earlier": -54
+        },
+        {
+          "event_start": "2026-03-17",
+          "new_alert_day": "2026-03-12",
+          "ic_alert_day": "2025-11-18",
+          "diff_days_new_earlier": -74
+        },
+        {
+          "event_start": "2026-03-31",
+          "new_alert_day": "2026-03-30",
+          "ic_alert_day": "2026-03-30",
+          "diff_days_new_earlier": 0
+        },
+        {
+          "event_start": "2026-04-30",
+          "new_alert_day": "2026-04-29",
+          "ic_alert_day": "2026-04-28",
+          "diff_days_new_earlier": -1
+        },
+        {
+          "event_start": "2026-05-18",
+          "new_alert_day": "2026-05-07",
+          "ic_alert_day": "2026-04-28",
+          "diff_days_new_earlier": -4
+        },
+        {
+          "event_start": "2026-07-03",
+          "new_alert_day": "2026-07-02",
+          "ic_alert_day": "2026-06-11",
+          "diff_days_new_earlier": -14
+        },
+        {
+          "event_start": "2026-07-31",
+          "new_alert_day": "2026-07-30",
+          "ic_alert_day": "2026-06-11",
+          "diff_days_new_earlier": -34
+        }
+      ]
+    },
+    "B组合(因子失效)": {
+      "n_compared": 8,
+      "avg_diff_days": -27.0,
+      "median_diff_days": -6.0,
+      "n_new_earlier": 2,
+      "n_ic_earlier": 6,
+      "new_earlier_pct": 25.0,
+      "detail": [
+        {
+          "event_start": "2024-06-17",
+          "new_alert_day": "2024-05-15",
+          "ic_alert_day": "2024-06-13",
+          "diff_days_new_earlier": 20
+        },
+        {
+          "event_start": "2025-08-11",
+          "new_alert_day": "2025-08-08",
+          "ic_alert_day": "2024-07-25",
+          "diff_days_new_earlier": -173
+        },
+        {
+          "event_start": "2025-10-27",
+          "new_alert_day": "2025-10-24",
+          "ic_alert_day": "2025-08-21",
+          "diff_days_new_earlier": -40
+        },
+        {
+          "event_start": "2025-11-10",
+          "new_alert_day": "2025-11-07",
+          "ic_alert_day": "2025-10-27",
+          "diff_days_new_earlier": -9
+        },
+        {
+          "event_start": "2025-11-18",
+          "new_alert_day": "2025-11-17",
+          "ic_alert_day": "2025-11-14",
+          "diff_days_new_earlier": -1
+        },
+        {
+          "event_start": "2026-04-02",
+          "new_alert_day": "2026-03-27",
+          "ic_alert_day": "2026-04-01",
+          "diff_days_new_earlier": 3
+        },
+        {
+          "event_start": "2026-04-21",
+          "new_alert_day": "2026-04-20",
+          "ic_alert_day": "2026-04-15",
+          "diff_days_new_earlier": -3
+        },
+        {
+          "event_start": "2026-08-18",
+          "new_alert_day": "2026-07-01",
+          "ic_alert_day": "2026-06-11",
+          "diff_days_new_earlier": -13
+        }
+      ]
+    }
+  }
+}
