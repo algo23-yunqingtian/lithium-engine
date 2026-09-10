@@ -337,10 +337,11 @@ def module3_gap_filter(ctx, final_pos, p901_px):
     # 跳空分布：9:01价 vs T日收盘
     gaps = np.zeros(n)
     gaps[1:] = (p901_px[1:] - close[:-1]) / close[:-1]
+    # 跳空从第2个交易日起有意义，对齐到idx[1:]
     gap_df = pd.DataFrame({
-        "date": [str(idx[i].date()) for i in range(n)],
-        "gap_pct": gaps[1:] * 100 if n > 1 else 0,
-    }).iloc[1:]
+        "date": [str(idx[i].date()) for i in range(1, n)],
+        "gap_pct": (gaps[1:] * 100) if n > 1 else 0,
+    })
     gap_df.to_csv(os.path.join(DATA_DIR, "exp425_gap_distribution.csv"), index=False)
 
     # 阈值扫描（叠加10bp滑点的9:01口径，与模块2第③组一致）
@@ -408,7 +409,7 @@ def module4_summary(perf_df, slip_df, gap_df, slippage_cal):
             "gap_thr": float(best_gap["gap_thr"]),
             "n_filtered_days": int(best_gap["n_filtered_days"]),
             "calmar": float(best_gap["calmar"]),
-            "ann_ret": float(best_gap["ann_ret"]),
+            "ann_ret": float(best_gap["annual_return"]),
         }
 
     # 实盘可行性判断

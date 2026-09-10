@@ -1,0 +1,243 @@
+{
+  "baseline_check": {
+    "total_return": 1.0613806381402662,
+    "annual_return": 0.33371481305461903,
+    "sharpe": 2.327459706439815,
+    "max_drawdown": -0.061497518021518524,
+    "calmar": 5.426476121163935,
+    "n_trades": 129,
+    "exec_slip_bp": 0.0,
+    "gap_filter_thr": 0.0
+  },
+  "module1_slippage_cal": {
+    "n_days": 4,
+    "mean_dev_pct": 0.03912514862554023,
+    "std_dev_pct": 0.31683832702125503,
+    "mean_abs_dev_pct": 0.27938640358238304,
+    "min_dev_pct": -0.4805225099136857,
+    "max_dev_pct": 0.37558685446010076,
+    "sample_pool_pct": [
+      0.37558685446010076,
+      0.15835312747426084,
+      -0.4805225099136857,
+      0.10308312248148509
+    ]
+  },
+  "module2_performance": [
+    {
+      "group": "① exp424基准(开盘,无滑点)",
+      "total_return": 1.0613806381402662,
+      "annual_return": 0.33371481305461903,
+      "sharpe": 2.327459706439815,
+      "max_drawdown": -0.061497518021518524,
+      "calmar": 5.426476121163935,
+      "n_trades": 129,
+      "exec_slip_bp": 0.0,
+      "gap_filter_thr": 0.0,
+      "group_main_slip_bp": NaN
+    },
+    {
+      "group": "② 9:01进场(无滑点)",
+      "total_return": 1.0674654614093906,
+      "annual_return": 0.3352806543398108,
+      "sharpe": 2.345222522769966,
+      "max_drawdown": -0.06128225295573046,
+      "calmar": 5.471088906963218,
+      "n_trades": 129,
+      "exec_slip_bp": 0.0,
+      "gap_filter_thr": 0.0,
+      "group_main_slip_bp": NaN
+    },
+    {
+      "group": "③ 9:01进场(+10bp滑点)",
+      "total_return": 0.8907816066237855,
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901,
+      "calmar": 4.225856312165608,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.0,
+      "group_main_slip_bp": 10.0
+    }
+  ],
+  "module2_slip_sensitivity": [
+    {
+      "slip_bp": 0.0,
+      "slip_pct": 0.0,
+      "ann_ret": 0.3352806543398108,
+      "sharpe": 2.345222522769966,
+      "max_dd": -0.06128225295573046,
+      "calmar": 5.471088906963218
+    },
+    {
+      "slip_bp": 2.0,
+      "slip_pct": 0.02,
+      "ann_ret": 0.32582187916320504,
+      "sharpe": 2.2956354950896922,
+      "max_dd": -0.06268975549750355,
+      "calmar": 5.197370392937327
+    },
+    {
+      "slip_bp": 5.0,
+      "slip_pct": 0.05,
+      "ann_ret": 0.3117548147600724,
+      "sharpe": 2.220301878874009,
+      "max_dd": -0.06479743762398149,
+      "calmar": 4.811221341331128
+    },
+    {
+      "slip_bp": 10.0,
+      "slip_pct": 0.1,
+      "ann_ret": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_dd": -0.06830073619489901,
+      "calmar": 4.225856312165608
+    },
+    {
+      "slip_bp": 15.0,
+      "slip_pct": 0.15,
+      "ann_ret": 0.26589693391888636,
+      "sharpe": 1.9612710912162024,
+      "max_dd": -0.07193042254857984,
+      "calmar": 3.6965851790917372
+    },
+    {
+      "slip_bp": 20.0,
+      "slip_pct": 0.2,
+      "ann_ret": 0.24355186133447648,
+      "sharpe": 1.8274640673301623,
+      "max_dd": -0.07560237991928868,
+      "calmar": 3.221484053735963
+    }
+  ],
+  "module3_gap_scan": [
+    {
+      "gap_thr": 0.0,
+      "n_filtered_days": 0,
+      "total_return": 0.8907816066237855,
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901,
+      "calmar": 4.225856312165608,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.0
+    },
+    {
+      "gap_thr": 0.02,
+      "n_filtered_days": 46,
+      "total_return": 0.879538103555396,
+      "annual_return": 0.28557313780622096,
+      "sharpe": 2.0822264364377068,
+      "max_drawdown": -0.07007100463166636,
+      "calmar": 4.075482281256821,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.02
+    },
+    {
+      "gap_thr": 0.03,
+      "n_filtered_days": 28,
+      "total_return": 0.8478373890672191,
+      "annual_return": 0.27689724979432384,
+      "sharpe": 2.0135511478966035,
+      "max_drawdown": -0.06943996003445478,
+      "calmar": 3.987577896890101,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.03
+    },
+    {
+      "gap_thr": 0.04,
+      "n_filtered_days": 16,
+      "total_return": 0.8868839322167477,
+      "annual_return": 0.28757095960842705,
+      "sharpe": 2.0815112278111902,
+      "max_drawdown": -0.0667649142841245,
+      "calmar": 4.30721678731798,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.04
+    },
+    {
+      "gap_thr": 0.05,
+      "n_filtered_days": 8,
+      "total_return": 0.8865871292542209,
+      "annual_return": 0.2874903298899072,
+      "sharpe": 2.0809926523878524,
+      "max_drawdown": -0.06691171024409025,
+      "calmar": 4.296562273496795,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.05
+    },
+    {
+      "gap_thr": 0.07,
+      "n_filtered_days": 5,
+      "total_return": 0.8918418401964379,
+      "annual_return": 0.28891670136365755,
+      "sharpe": 2.093801402130418,
+      "max_drawdown": -0.06913331852910425,
+      "calmar": 4.1791238654633265,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.07
+    },
+    {
+      "gap_thr": 0.1,
+      "n_filtered_days": 1,
+      "total_return": 0.8907816066237855,
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901,
+      "calmar": 4.225856312165608,
+      "n_trades": 129,
+      "exec_slip_bp": 10.0,
+      "gap_filter_thr": 0.1
+    }
+  ],
+  "module4_summary": {
+    "baseline_opening_no_slip": {
+      "annual_return": 0.33371481305461903,
+      "sharpe": 2.327459706439815,
+      "max_drawdown": -0.061497518021518524,
+      "calmar": 5.426476121163935,
+      "n_trades": 129
+    },
+    "exec_901_no_slip": {
+      "annual_return": 0.3352806543398108,
+      "sharpe": 2.345222522769966,
+      "max_drawdown": -0.06128225295573046,
+      "calmar": 5.471088906963218,
+      "n_trades": 129
+    },
+    "exec_901_with_slip": {
+      "annual_return": 0.28862909717477203,
+      "sharpe": 2.092271308070871,
+      "max_drawdown": -0.06830073619489901,
+      "calmar": 4.225856312165608,
+      "n_trades": 129
+    },
+    "decay_annual_pp": -4.5085715879847,
+    "decay_sharpe": -23.5188398368944,
+    "decay_calmar": -120.06198089983266,
+    "decay_annual_ratio_pct": -13.510253101191472,
+    "opening_to_901_annual_pp": 0.15658412851917713,
+    "slip_only_annual_pp": -4.665155716503877,
+    "best_gap_filter": {
+      "gap_thr": 0.04,
+      "n_filtered_days": 16,
+      "calmar": 4.30721678731798,
+      "ann_ret": 0.28757095960842705
+    },
+    "verdict": "FEASIBLE",
+    "verdict_reason": "9:01+滑点后年化28.9%、Calmar4.23、回撤-6.8%，仍满足实盘要求"
+  },
+  "config": {
+    "adx_threshold": 30.0,
+    "adx_scale": 0.3,
+    "main_slip_bp": 10.0,
+    "rng_seed": 20260910
+  }
+}
