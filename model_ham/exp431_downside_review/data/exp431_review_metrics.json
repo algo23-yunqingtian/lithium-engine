@@ -1,0 +1,511 @@
+{
+  "market": {
+    "start_date": "2026-08-14",
+    "end_date": "2026-09-10",
+    "trading_days": 20,
+    "start_close": 155240.0,
+    "end_close": 141300.0,
+    "total_return_pct": -8.979644421540844,
+    "peak_close": 161000.0,
+    "peak_date": "2026-08-31",
+    "trough_close": 141300.0,
+    "trough_date": "2026-09-10",
+    "peak_to_trough_pct": -12.236024844720495,
+    "max_daily_drop_pct": -5.400981996726673,
+    "daily_volatility_pct": 2.704676870041054,
+    "p_fund_start": 146000.0,
+    "p_fund_end": 141000.0,
+    "daily": [
+      {
+        "date": "2026-08-14",
+        "close": 155240.0,
+        "ret_pct": null,
+        "p_fund": 146000.0,
+        "basis_pct": 6.328767123287671
+      },
+      {
+        "date": "2026-08-17",
+        "close": 153500.0,
+        "ret_pct": -1.1208451430043787,
+        "p_fund": 146000.0,
+        "basis_pct": 5.136986301369863
+      },
+      {
+        "date": "2026-08-18",
+        "close": 155400.0,
+        "ret_pct": 1.237785016286641,
+        "p_fund": 146000.0,
+        "basis_pct": 6.438356164383562
+      },
+      {
+        "date": "2026-08-19",
+        "close": 150660.0,
+        "ret_pct": -3.0501930501930508,
+        "p_fund": 146000.0,
+        "basis_pct": 3.1917808219178085
+      },
+      {
+        "date": "2026-08-20",
+        "close": 152160.0,
+        "ret_pct": 0.9956192751891635,
+        "p_fund": 146000.0,
+        "basis_pct": 4.219178082191781
+      },
+      {
+        "date": "2026-08-21",
+        "close": 158680.0,
+        "ret_pct": 4.2849631966351165,
+        "p_fund": 146000.0,
+        "basis_pct": 8.684931506849315
+      },
+      {
+        "date": "2026-08-24",
+        "close": 158860.0,
+        "ret_pct": 0.11343584572724996,
+        "p_fund": 146000.0,
+        "basis_pct": 8.808219178082192
+      },
+      {
+        "date": "2026-08-25",
+        "close": 150280.0,
+        "ret_pct": -5.400981996726673,
+        "p_fund": 146000.0,
+        "basis_pct": 2.9315068493150687
+      },
+      {
+        "date": "2026-08-26",
+        "close": 152160.0,
+        "ret_pct": 1.2509981368112877,
+        "p_fund": 146000.0,
+        "basis_pct": 4.219178082191781
+      },
+      {
+        "date": "2026-08-27",
+        "close": 152020.0,
+        "ret_pct": -0.09200841219768607,
+        "p_fund": 146000.0,
+        "basis_pct": 4.123287671232877
+      },
+      {
+        "date": "2026-08-28",
+        "close": 159600.0,
+        "ret_pct": 4.986186028154194,
+        "p_fund": 146000.0,
+        "basis_pct": 9.315068493150685
+      },
+      {
+        "date": "2026-08-31",
+        "close": 161000.0,
+        "ret_pct": 0.8771929824561431,
+        "p_fund": 146000.0,
+        "basis_pct": 10.273972602739725
+      },
+      {
+        "date": "2026-09-01",
+        "close": 157860.0,
+        "ret_pct": -1.9503105590062075,
+        "p_fund": 146000.0,
+        "basis_pct": 8.123287671232877
+      },
+      {
+        "date": "2026-09-02",
+        "close": 154780.0,
+        "ret_pct": -1.9510959077663759,
+        "p_fund": 146000.0,
+        "basis_pct": 6.013698630136986
+      },
+      {
+        "date": "2026-09-03",
+        "close": 149880.0,
+        "ret_pct": -3.1657836929835925,
+        "p_fund": 146000.0,
+        "basis_pct": 2.6575342465753424
+      },
+      {
+        "date": "2026-09-04",
+        "close": 141940.0,
+        "ret_pct": -5.297571390445688,
+        "p_fund": 146000.0,
+        "basis_pct": -2.780821917808219
+      },
+      {
+        "date": "2026-09-07",
+        "close": 142200.0,
+        "ret_pct": 0.18317598985486683,
+        "p_fund": 146000.0,
+        "basis_pct": -2.6027397260273974
+      },
+      {
+        "date": "2026-09-08",
+        "close": 143480.0,
+        "ret_pct": 0.9001406469760997,
+        "p_fund": 143000.0,
+        "basis_pct": 0.3356643356643357
+      },
+      {
+        "date": "2026-09-09",
+        "close": 142000.0,
+        "ret_pct": -1.0315026484527423,
+        "p_fund": 143000.0,
+        "basis_pct": -0.6993006993006993
+      },
+      {
+        "date": "2026-09-10",
+        "close": 141300.0,
+        "ret_pct": -0.4929577464788726,
+        "p_fund": 141000.0,
+        "basis_pct": 0.2127659574468085
+      }
+    ]
+  },
+  "ic": {
+    "series": [
+      {
+        "date": "2026-08-14",
+        "IC": 0.438341529479121,
+        "IC_negative": false
+      },
+      {
+        "date": "2026-08-17",
+        "IC": 0.0788474308812484,
+        "IC_negative": false
+      },
+      {
+        "date": "2026-08-18",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-19",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-20",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-21",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-24",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-25",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-26",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-27",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-28",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-08-31",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-01",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-02",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-03",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-04",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-07",
+        "IC": -0.2016622567466056,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-08",
+        "IC": -0.05,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-09",
+        "IC": -0.05,
+        "IC_negative": true
+      },
+      {
+        "date": "2026-09-10",
+        "IC": -0.05,
+        "IC_negative": true
+      }
+    ],
+    "total_days": 20,
+    "negative_days": 18,
+    "negative_ratio_pct": 90.0,
+    "positive_ratio_pct": 10.0,
+    "latest_IC": -0.05,
+    "benchmark_mean": 0.238,
+    "benchmark_pos_ratio_pct": 85.7
+  },
+  "ic_streak": {
+    "current_consecutive_negative_days": 18,
+    "max_consecutive_negative_days": 18,
+    "streaks": [
+      {
+        "start": "2026-08-18",
+        "end": "2026-09-10",
+        "days": 18
+      }
+    ]
+  },
+  "alert": {
+    "levels": {
+      "OK": 2,
+      "WARNING": 0,
+      "CRITICAL": 18
+    },
+    "ratios_pct": {
+      "OK": 10.0,
+      "WARNING": 0.0,
+      "CRITICAL": 90.0
+    },
+    "benchmark_ratios_pct": {
+      "OK": 67.0,
+      "WARNING": 20.0,
+      "CRITICAL": 13.0
+    },
+    "flag_counts": {
+      "IC_CRIT": 18
+    },
+    "details": [
+      {
+        "date": "2026-08-18",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 155400.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-19",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 150660.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-08-20",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 152160.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-21",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 158680.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-24",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 158860.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-25",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 150280.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-08-26",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 152160.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-27",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 152020.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-28",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 159600.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-08-31",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 161000.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-09-01",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 157860.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-02",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 154780.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-03",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 149880.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-04",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 141940.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-07",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 142200.0,
+        "IC": -0.2016622567466056,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-08",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 143480.0,
+        "IC": -0.05,
+        "signal_dir": 1
+      },
+      {
+        "date": "2026-09-09",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 142000.0,
+        "IC": -0.05,
+        "signal_dir": -1
+      },
+      {
+        "date": "2026-09-10",
+        "level": "CRITICAL",
+        "flags": "IC_CRIT",
+        "close": 141300.0,
+        "IC": -0.05,
+        "signal_dir": -1
+      }
+    ],
+    "consecutive_critical_streaks": [
+      {
+        "start": "2026-08-18",
+        "end": "2026-09-10",
+        "days": 18
+      }
+    ],
+    "current_consecutive_critical_days": 18,
+    "max_consecutive_critical_days": 18,
+    "current_consecutive_any_alert_days": 18
+  },
+  "r4": {
+    "rule": "CRITICAL 连续 >= 3 交易日 → 暂停交易 (pos 强制置 0)",
+    "trigger_date": "2026-08-20",
+    "all_days_flat": true,
+    "total_trades": 0,
+    "holding_days_A": 0,
+    "nav_A_final": 1000000.0,
+    "cum_return_A_pct": 0.0,
+    "max_drawdown_A_pct": 0.0
+  },
+  "comparison": {
+    "shadow": {
+      "annual_return_pct": 0.0,
+      "max_drawdown_pct": 0.0,
+      "trades": 0,
+      "holding_days": 0,
+      "nav_final": 1000000.0
+    },
+    "benchmark": {
+      "annual_return_pct": 34.0,
+      "max_drawdown_pct": -6.8,
+      "trades": 135,
+      "holding_days": 232
+    }
+  },
+  "daily_monitor_log": [
+    "2026-08-14 | close=155240 | IC=+0.438 (负连续0d) | OK(-) (告警连续0d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-17 | close=153500 | IC=+0.079 (负连续0d) | OK(-) (告警连续0d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-18 | close=155400 | IC=-0.202 (负连续1d) | CRITICAL(IC_CRIT) (告警连续1d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-19 | close=150660 | IC=-0.202 (负连续2d) | CRITICAL(IC_CRIT) (告警连续2d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-20 | close=152160 | IC=-0.202 (负连续3d) | CRITICAL(IC_CRIT) (告警连续3d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-21 | close=158680 | IC=-0.202 (负连续4d) | CRITICAL(IC_CRIT) (告警连续4d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-24 | close=158860 | IC=-0.202 (负连续5d) | CRITICAL(IC_CRIT) (告警连续5d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-25 | close=150280 | IC=-0.202 (负连续6d) | CRITICAL(IC_CRIT) (告警连续6d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-26 | close=152160 | IC=-0.202 (负连续7d) | CRITICAL(IC_CRIT) (告警连续7d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-27 | close=152020 | IC=-0.202 (负连续8d) | CRITICAL(IC_CRIT) (告警连续8d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-28 | close=159600 | IC=-0.202 (负连续9d) | CRITICAL(IC_CRIT) (告警连续9d) | pos_A=+0.00 | NAV=1000000",
+    "2026-08-31 | close=161000 | IC=-0.202 (负连续10d) | CRITICAL(IC_CRIT) (告警连续10d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-01 | close=157860 | IC=-0.202 (负连续11d) | CRITICAL(IC_CRIT) (告警连续11d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-02 | close=154780 | IC=-0.202 (负连续12d) | CRITICAL(IC_CRIT) (告警连续12d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-03 | close=149880 | IC=-0.202 (负连续13d) | CRITICAL(IC_CRIT) (告警连续13d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-04 | close=141940 | IC=-0.202 (负连续14d) | CRITICAL(IC_CRIT) (告警连续14d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-07 | close=142200 | IC=-0.202 (负连续15d) | CRITICAL(IC_CRIT) (告警连续15d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-08 | close=143480 | IC=-0.050 (负连续16d) | CRITICAL(IC_CRIT) (告警连续16d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-09 | close=142000 | IC=-0.050 (负连续17d) | CRITICAL(IC_CRIT) (告警连续17d) | pos_A=+0.00 | NAV=1000000",
+    "2026-09-10 | close=141300 | IC=-0.050 (负连续18d) | CRITICAL(IC_CRIT) (告警连续18d) | pos_A=+0.00 | NAV=1000000"
+  ],
+  "latest_stats": {
+    "date": "2026-09-10",
+    "ic_consecutive_negative_days": 18,
+    "alert_consecutive_days": 18
+  }
+}

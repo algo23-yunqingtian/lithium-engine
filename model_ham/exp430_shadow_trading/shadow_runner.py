@@ -427,6 +427,37 @@ def update_shadow_log(daily, ctx, config_results, alerts_df, exec_prices,
     }
 
 
+def compute_consecutive_stats(log):
+    """
+    exp431 新增监控统计项: 连续负值/连续告警天数.
+
+    从影子盘日志的 alert_flags 推断 IC 符号 (IC_CRIT => IC<0),
+    返回每一交易日的两条连续计数, 供每日日志打印与报告引用.
+
+    参数:
+      log: exp430_shadow_log.csv 的 DataFrame (含 alert_flags / alert_level 列)
+    返回:
+      DataFrame, 列: date, ic_consecutive_neg_days, alert_consecutive_days
+    """
+    out = []
+    ic_consec = 0
+    al_consec = 0
+    for _, row in log.iterrows():
+        flags = str(row["alert_flags"])
+        # IC 负值: alert_flags 含 IC_CRIT (IC_roll < 0) 即因子漂移
+        ic_neg = "IC_CRIT" in flags
+        ic_consec = ic_consec + 1 if ic_neg else 0
+        # 告警连续: 任意非 OK 级别
+        has_alert = str(row["alert_level"]).strip() != "OK"
+        al_consec = al_consec + 1 if has_alert else 0
+        out.append({
+            "date": str(row["date"])[:10],
+            "ic_consecutive_neg_days": ic_consec,
+            "alert_consecutive_days": al_consec,
+        })
+    return pd.DataFrame(out)
+
+
 def load_prev_state():
     """从影子盘日志加载前一日状态."""
     if not os.path.exists(SHADOW_LOG):
@@ -649,14 +680,42 @@ def run_shadow_trading(force_symbol=None):
         new_state = update_shadow_log(
             daily, ctx, cr, alerts, exec_prices, prev_state, run_meta
         )
-        
-        # Step 10: 记录运行日志
+
+        # Step 10 (exp431 新增): 连续统计监控项 + 每日日志打印
+        # 不改变任何风控阈值/模型参数, 仅追加观测性统计
+        print(f"\n[7] 连续统计监控 (exp431)...")
+        log_now = pd.read_csv(SHADOW_LOG)
+        log_now = log_now.sort_values("date").reset_index(drop=True)
+        consec = compute_consecutive_stats(log_now)
+        today_consec = consec.iloc[-1]
+        print(f"  IC 连续负值天数: {int(today_consec['ic_consecutive_neg_days'])} 天 "
+              f"(阈值参考: 连续5日 = 禁止交易红线)")
+        print(f"  连续告警天数: {int(today_consec['alert_consecutive_days'])} 天 "
+              f"(CRITICAL 连续3日 → R4 暂停交易)")
+        # 落盘, 供复盘/看板引用
+        consec.to_csv(os.path.join(DATA_DIR, "exp431_consecutive_stats.csv"),
+                      index=False)
+        # 追加到 cron 日志, 形成逐日可审计轨迹
+        cron_line = (
+            f"[{datetime.now().isoformat(timespec='seconds')}] "
+            f"{str(today_date.date())} | close={close_price:.0f} | "
+            f"IC_neg_streak={int(today_consec['ic_consecutive_neg_days'])}d | "
+            f"alert_streak={int(today_consec['alert_consecutive_days'])}d | "
+            f"pos_A={float(daily.iloc[-1]['pos_A']):+.2f} | "
+            f"NAV_A={new_state['nav_A']:.0f}\n"
+        )
+        with open(os.path.join(DATA_DIR, "cron_log.txt"), "a") as cf:
+            cf.write(cron_line)
+        print(f"  连续统计 -> data/exp431_consecutive_stats.csv")
+        print(f"  每日日志 -> data/cron_log.txt")
+
+        # Step 11: 记录运行日志
         log_run("SUCCESS", f"影子盘运行成功 {today_date.date()}", 
                 symbol=symbol, close=close_price,
                 action_A=action_a, action_B=action_b,
                 nav_A=new_state["nav_A"], nav_B=new_state["nav_B"])
-        
-        print(f"\n[7] 完成: nav_A={new_state['nav_A']:.0f} nav_B={new_state['nav_B']:.0f}")
+
+        print(f"\n[8] 完成: nav_A={new_state['nav_A']:.0f} nav_B={new_state['nav_B']:.0f}")
         print(f"  累计收益 A: {new_state['cum_pnl_A']:.0f} ({new_state['cum_pnl_A']/INIT_CAPITAL*100:.2f}%)")
         print(f"  累计收益 B: {new_state['cum_pnl_B']:.0f} ({new_state['cum_pnl_B']/INIT_CAPITAL*100:.2f}%)")
         
