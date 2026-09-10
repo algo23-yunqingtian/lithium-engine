@@ -1,0 +1,19 @@
+{
+  "n_trades": 51,
+  "strong_trend_trades": 21,
+  "strong_trend_ratio": 0.4117647058823529,
+  "exit_reasons": {
+    "neutral_revert": 21,
+    "gmm_transition": 15,
+    "reverse_signal": 15
+  },
+  "direction_counts": {
+    "1": 38,
+    "-1": 13
+  },
+  "win_rate": 0.3137254901960784,
+  "avg_hold_days": 1.392156862745098,
+  "strong_trend_win_rate": 0.3333333333333333,
+  "strong_trend_avg_ret": -0.015328380952380953,
+  "normal_avg_ret": 0.0007611666666666676
+}
