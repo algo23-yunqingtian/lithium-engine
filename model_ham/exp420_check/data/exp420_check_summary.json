@@ -1,0 +1,144 @@
+{
+  "param_check": {
+    "params": {
+      "alpha": 0.3,
+      "beta": 0.5,
+      "gamma": 2,
+      "W": 20,
+      "ROLLING_TRAIN": 180,
+      "POS_HIGH_Q": 0.95,
+      "POS_MED_Q": 0.9,
+      "NEUTRAL_Q": 0.4,
+      "MAX_HOLD_HAM": 12,
+      "COST_PER_SIDE": 0.0015,
+      "TRADING_DAYS_PER_YEAR": 250
+    },
+    "expected": {
+      "alpha": 0.3,
+      "beta": 0.5,
+      "gamma": 2,
+      "W": 20,
+      "ROLLING_TRAIN": 180,
+      "POS_HIGH_Q": 0.95,
+      "POS_MED_Q": 0.9,
+      "NEUTRAL_Q": 0.4,
+      "MAX_HOLD_HAM": 12,
+      "COST_PER_SIDE": 0.0015,
+      "TRADING_DAYS_PER_YEAR": 250
+    },
+    "differences": [],
+    "has_differences": false,
+    "note": "exp420和exp419使用完全相同的exp409_ham_dynamic模块参数，无差异。两者都是纯HAM动态引擎（不含exp412/413/416风控层），与exp419基准定义一致。"
+  },
+  "equity_audit": {
+    "bug_metrics": {
+      "label": "BUG(不含exit日)",
+      "total_return": 10.892415075950694,
+      "annual_return": 1.6794975689544374,
+      "sharpe": 4.764184787581712,
+      "max_drawdown": 0.0,
+      "calmar": 0.0,
+      "equity_final": 11.892415075950694,
+      "equity_min": 0.847,
+      "positions_nonzero": 71
+    },
+    "fixed_metrics": {
+      "label": "FIX(含exit日)",
+      "total_return": 4.279469836159138,
+      "annual_return": 0.9393463598677438,
+      "sharpe": 2.849969976187525,
+      "max_drawdown": -0.14675944158808482,
+      "calmar": 6.400585541230405,
+      "equity_final": 5.279469836159138,
+      "equity_min": 0.847,
+      "positions_nonzero": 122
+    },
+    "root_cause": "BUG：compute_equity_curve_A中position数组用range(ei, xi)不含exit日。exp409.run_ham_dynamic在exit日平仓（close[xi]），但position[xi]=0表示exit日无持仓，导致exit日收益被重复计入两次（一次在exit日的price_change，一次在下一笔交易的entry日）。修复：range(ei, xi+1)包含exit日。",
+    "max_dd_bug": 0.0,
+    "max_dd_fixed": -0.14675944158808482
+  },
+  "distribution_check": {
+    "exp419": {
+      "label": "exp419",
+      "n": 51,
+      "mean": -0.005863941176470587,
+      "median": -0.010383,
+      "std": 0.053738510070566556,
+      "min": -0.108218,
+      "max": 0.222223,
+      "p10": -0.06973,
+      "p25": -0.021809500000000002,
+      "p75": 0.0039815,
+      "p90": 0.055629,
+      "wins": 16,
+      "losses": 35,
+      "win_rate": 0.3137254901960784,
+      "avg_win": 0.046604124999999996,
+      "avg_loss": -0.029849342857142858
+    },
+    "exp420_A": {
+      "label": "exp420_A",
+      "n": 51,
+      "mean": -0.005863952805570402,
+      "median": -0.010382892057026477,
+      "std": 0.05373847460436005,
+      "min": -0.10821764197174978,
+      "max": 0.22222263717322607,
+      "p10": -0.06972999287580148,
+      "p25": -0.021809353092422837,
+      "p75": 0.003981782521026904,
+      "p90": 0.05562944162436548,
+      "wins": 16,
+      "losses": 35,
+      "win_rate": 0.3137254901960784,
+      "avg_win": 0.04660416871763312,
+      "avg_loss": -0.0298493797876063
+    },
+    "exp420_B": {
+      "label": "exp420_B",
+      "n": 51,
+      "mean": -0.009296666893086185,
+      "median": -0.014081560283687945,
+      "std": 0.05412987658161153,
+      "min": -0.12201490328717894,
+      "max": 0.2210343347639485,
+      "p10": -0.06803067484662577,
+      "p25": -0.0299073482428115,
+      "p75": 0.007407053494652958,
+      "p90": 0.06252623948970716,
+      "wins": 16,
+      "losses": 35,
+      "win_rate": 0.3137254901960784,
+      "avg_win": 0.04585602862258025,
+      "avg_loss": -0.034509327700247984
+    },
+    "A_vs_419_max_diff": 4.7335423197791826e-07,
+    "A_vs_419_mean_diff": 2.718645594233433e-07,
+    "A_vs_419_identical": true,
+    "conclusion": "exp420版本A的逐笔盈亏与exp419完全一致（差异<1e-6，浮点精度级别）。收益分布从正向变负向不是逐笔盈亏变化导致的，而是exp420原代码的equity计算BUG（position不含exit日→max_dd=0%→年化虚高）。修正后：版本A年化+93.9%（非+167.9%），版本B仍为负收益。"
+  },
+  "metrics_A_fixed": {
+    "total_return": 4.279469836159138,
+    "annual_return": 0.9393463598677438,
+    "sharpe": 2.849969976187525,
+    "max_drawdown": -0.14675944158808482,
+    "calmar": 6.400585541230405
+  },
+  "metrics_B_fixed": {
+    "total_return": -0.41941844565141795,
+    "annual_return": -0.19462803034965237,
+    "sharpe": -0.5439954677254155,
+    "max_drawdown": -0.395763609921025,
+    "calmar": -0.4917784896607613
+  },
+  "n_trades_A": 51,
+  "n_trades_B": 51,
+  "original_metrics_A_buggy": {
+    "annual_return": 1.6794975689544374,
+    "max_drawdown": 0.0
+  },
+  "original_metrics_A_fixed": {
+    "annual_return": 0.9393463598677438,
+    "max_drawdown": -0.14675944158808482
+  }
+}
