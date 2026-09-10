@@ -408,6 +408,37 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 
 ---
 
+### 4.11 exp429：HAM 碳酸锂实盘工程化（Production Ready）
+
+基于 exp428（STABLE 滚动影子盘）与 exp426（消融实验）的结论，把 HAM 策略固化为可每日复用的实盘生产流水线，并搭建监控告警体系与持续影子盘。
+
+**流水线**（`model_ham/exp429_production/`）：`ham_pipeline.py`（封装 D 因子+信号+两套仓位，不重复实现底层，复用 exp409/413/424/425/428）、`monitoring.py`（IC/D分布/Logit权重三维度时序+漂移告警）、`run_daily.py`（每日主入口）。每日收盘运行输出：分歧 D 因子序列、交易信号、建议仓位（配置A/B 并行）。
+
+**两套配置绩效**（9:01分钟均价+10bp滑点，无前视，滚动每日估参，2024-02~2026-09 共628日）：
+
+| 指标 | 配置A（稳健，保留ADX降权×0.3） | 配置B（激进，关闭ADX降权） |
+|:---|:---:|:---:|
+| 年化 | **34.0%** | **37.4%** |
+| Calmar | **4.98** | 3.55 |
+| 最大回撤 | **−6.8%** | **−10.5%** |
+| 夏普 | 2.293 | 2.212 |
+| 笔数 | 135 | 132 |
+| 日度IC | +0.219 | +0.241 |
+
+**回撤与 exp426 锚点完全一致**（A −6.8% / B −10.5%），验证 ADX 降权是唯一变量。年化高于一次性锚点（28.9%/32.1%）源于滚动每日估参优势（exp428 已证 +5.2pp），只提升收益不放大风险。**配置A 为风险调整最优，推荐实盘主力**；配置B 牺牲 Calmar（4.98→3.55）换 3.4pp 年化、回撤放大 3.7pp，适合激进资金。
+
+**监控告警**（三维度日度刷新）：因子 IC（均值 0.238/正占比 85.7%）、D 分布中位数（均值 0.580/P90 0.956）、Logit 权重 CV（α 均值 0.087）。三级告警阈值经全样本分位校准：OK 67% / WARNING 20% / CRITICAL 13%。CRITICAL 连续 3 日或 IC<0 连续 5 日触发暂停。
+
+**持续影子盘**：`exp429_shadow_log.csv` 记录 628 交易日逐日信号快照，配置A/B 各活跃 232 日，实盘每日自动追加。
+
+**判定：PRODUCTION_READY**。实盘手册见 `model_ham/HANDOVER_exp429.md`（含每日 SOP、10 条禁止交易红线、4 层止损规则、告警响应流程、影子盘对照纪律）。
+
+**诚实局限**：9:01 成交价为统计外推（仅4日标定）；滚动估参年化优势未样本外独立验证（实盘初期须影子盘对照真实成交）；告警阈值为分位校准非统计检验；P_fund 沿用代理。
+
+详见报告 `reports/exp429_production_ready.md`。
+
+---
+
 ## 文件索引
 
 | 模块 | 文件 |
@@ -439,7 +470,12 @@ $$\text{signal\_dir}(t) = \text{sign}(\text{disagreement}(t))$$
 | exp428 引擎 | `model_ham/exp428_shadow_trading/exp428_engine.py` |
 | exp427-1 极端压力测试 | `reports/exp427_1_extreme_stress.md` |
 | exp427-1 引擎 | `model_ham/exp427_1_extreme_stress/exp427_1_engine.py` |
+| exp429 生产流水线(核心库) | `model_ham/exp429_production/ham_pipeline.py` |
+| exp429 监控告警 | `model_ham/exp429_production/monitoring.py` |
+| exp429 每日入口 | `model_ham/exp429_production/run_daily.py` |
+| exp429 报告 | `reports/exp429_production_ready.md` |
+| exp429 实盘手册 | `model_ham/HANDOVER_exp429.md` |
 
 ---
 
-*生成时间：2026-09-10 | HAM 策略完整结题文档 | exp401~428 23轮迭代结题 | 含完整工作流(6步迭代)、T0/T1双档案(T1推荐实盘主力)、风险清单、数学附录、exp424样本外与参数鲁棒诊断、exp425分钟级进场仿真(9:01+10bp→28.9%/Calmar4.23 FEASIBLE)、exp426消融(投机主体=收益引擎-21.4pp/产业=方向过滤-11.3pp/Logit=状态增强-6.6pp/ADX=风控组件，四组件缺一不可)、exp427跨品种(锌NOT_TRANSFERABLE 2.0%/Calmar0.24,aux_confirm稀缺)、exp428滚动影子盘(STABLE:滚动每日估参34.0%/Calmar4.98,方向一致100%/Jaccard0.931/净值相关0.995,rank标准化吸收alpha/beta数值噪声,可实盘每日估参)、exp427-1极端压力测试(ROBUST:极端段年化50.8%>非极端26.3%反直觉,核心段51日净盈利+3.3%回撤-1.3%,ADX保护+4.9pp,滚动估参极端段+13.0%>一次性+12.2%,50bp滑点仍+11.7%年化,风控有效模型稳健)*
+*生成时间：2026-09-10 | HAM 策略完整结题文档 | exp401~428 23轮迭代结题 | 含完整工作流(6步迭代)、T0/T1双档案(T1推荐实盘主力)、风险清单、数学附录、exp424样本外与参数鲁棒诊断、exp425分钟级进场仿真(9:01+10bp→28.9%/Calmar4.23 FEASIBLE)、exp426消融(投机主体=收益引擎-21.4pp/产业=方向过滤-11.3pp/Logit=状态增强-6.6pp/ADX=风控组件，四组件缺一不可)、exp427跨品种(锌NOT_TRANSFERABLE 2.0%/Calmar0.24,aux_confirm稀缺)、exp428滚动影子盘(STABLE:滚动每日估参34.0%/Calmar4.98,方向一致100%/Jaccard0.931/净值相关0.995,rank标准化吸收alpha/beta数值噪声,可实盘每日估参)、exp427-1极端压力测试(ROBUST:极端段年化50.8%>非极端26.3%反直觉,核心段51日净盈利+3.3%回撤-1.3%,ADX保护+4.9pp,滚动估参极端段+13.0%>一次性+12.2%,50bp滑点仍+11.7%年化,风控有效模型稳健)、exp429实盘工程化(PRODUCTION_READY:流水线封装D因子+信号+两套仓位,三维度监控告警OK67%/WARNING20%/CRITICAL13%,持续影子盘628日,配置A稳健34.0%/Calmar4.98/回撤-6.8%推荐主力 配置B激进37.4%/Calmar3.55/回撤-10.5%,回撤与exp426锚点完全一致,10条禁止交易红线+4层止损+告警响应SOP)*

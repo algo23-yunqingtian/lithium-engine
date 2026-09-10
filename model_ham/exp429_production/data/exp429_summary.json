@@ -1,0 +1,58 @@
+{
+  "config": {
+    "start": "2024-02-01",
+    "end": "2026-09-07",
+    "n_days": 628,
+    "slip_bp": 10.0,
+    "adx_threshold": 30.0,
+    "est_window": 180
+  },
+  "slippage_calibration": {
+    "n_days": 4,
+    "mean_dev_pct": 0.0391251486255402
+  },
+  "performance": {
+    "A": {
+      "name": "配置A_稳健",
+      "adx_scale": 0.3,
+      "annual_return": 0.3404575841692723,
+      "sharpe": 2.2929095178077206,
+      "max_drawdown": -0.06830073619489953,
+      "calmar": 4.984683960034629,
+      "total_return": 1.0876597952249898,
+      "n_trades": 135,
+      "ic": 0.21907380545869326,
+      "hold_days": 232
+    },
+    "B": {
+      "name": "配置B_激进",
+      "adx_scale": 1.0,
+      "annual_return": 0.37363542591362675,
+      "sharpe": 2.2119051057914922,
+      "max_drawdown": -0.10521864458043023,
+      "calmar": 3.551038196733431,
+      "total_return": 1.2198987393136078,
+      "n_trades": 132,
+      "ic": 0.24102881200483528,
+      "hold_days": 232
+    }
+  },
+  "monitoring": {
+    "ic_mean": 0.23756279812923944,
+    "ic_p10": -0.036532710577087193,
+    "ic_positive_ratio": 0.8568507157464212,
+    "dev_median_mean": 0.5803830863346823,
+    "alpha_cv_mean": 0.087080956587012,
+    "beta_cv_mean": 0.03240158485688947
+  },
+  "drift_alerts": {
+    "OK": 342,
+    "WARNING": 101,
+    "CRITICAL": 67
+  },
+  "shadow_log": {
+    "n_days": 628,
+    "active_A": 232,
+    "active_B": 232
+  }
+}
