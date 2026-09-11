@@ -1,0 +1,66 @@
+{
+  "ic_by_window": {
+    "20d": {
+      "mean": 0.0273,
+      "std": 0.22,
+      "positive_pct": 0.5185,
+      "median": 0.0151,
+      "p5": -0.3356,
+      "p95": 0.3883
+    },
+    "40d": {
+      "mean": 0.0248,
+      "std": 0.1373,
+      "positive_pct": 0.5288,
+      "median": 0.0186,
+      "p5": -0.1732,
+      "p95": 0.2537
+    },
+    "60d": {
+      "mean": 0.044,
+      "std": 0.1177,
+      "positive_pct": 0.602,
+      "median": 0.0266,
+      "p5": -0.1226,
+      "p95": 0.2598
+    }
+  },
+  "state_results": {
+    "\u535a\u5f08\u4f4e\u6ce2\u52a8": {
+      "n_days": 205,
+      "ann_ret_pct": 0.59,
+      "mdd_pct": -6.6,
+      "ic_mean": 0.0906,
+      "win_rate": 0.4754,
+      "profit_factor": 1.13,
+      "hold_pct": 0.2585
+    },
+    "\u535a\u5f08\u9ad8\u6ce2\u52a8": {
+      "n_days": 241,
+      "ann_ret_pct": 18.52,
+      "mdd_pct": -2.13,
+      "ic_mean": -0.0396,
+      "win_rate": 0.5462,
+      "profit_factor": 1.57,
+      "hold_pct": 0.3983
+    },
+    "\u62e5\u6324\u4f4e\u6ce2\u52a8": {
+      "n_days": 109,
+      "ann_ret_pct": 82.5,
+      "mdd_pct": -4.31,
+      "ic_mean": 0.2629,
+      "win_rate": 0.7561,
+      "profit_factor": 1.22,
+      "hold_pct": 0.3303
+    },
+    "\u62e5\u6324\u9ad8\u6ce2\u52a8": {
+      "n_days": 73,
+      "ann_ret_pct": 71.3,
+      "mdd_pct": -6.64,
+      "ic_mean": -0.1341,
+      "win_rate": 0.5192,
+      "profit_factor": 1.86,
+      "hold_pct": 0.6438
+    }
+  }
+}

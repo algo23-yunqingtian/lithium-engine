@@ -1,0 +1,14 @@
+{
+  "actual_ann_ret_pct": 29.95,
+  "perm_mean_pct": -24.92,
+  "perm_std_pct": 9.41,
+  "perm_p5_pct": -41.46,
+  "perm_p95_pct": -9.04,
+  "p_value": 0.0099,
+  "significant_5pct": true,
+  "n_perms": 100,
+  "random_slice_ic_mean": 0.2583,
+  "random_slice_ic_std": 0.1304,
+  "random_slice_negative_count": 0,
+  "random_slice_positive_pct_mean": 0.8975
+}

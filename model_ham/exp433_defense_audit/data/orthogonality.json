@@ -1,0 +1,43 @@
+{
+  "ham_ic_original": 0.1087,
+  "ham_ic_pvalue": 0.0095,
+  "ham_orthogonal_residual_ic": 0.0548,
+  "residual_pvalue": 0.1915,
+  "info_retention_pct": 50.4,
+  "vif": {
+    "basis_rate": Infinity,
+    "basis_chg5": Infinity,
+    "pos_chg_20d": Infinity,
+    "vol_chg_20d": Infinity,
+    "rvol20": Infinity,
+    "momentum_20d": Infinity,
+    "bias_rate": Infinity,
+    "position_level": Infinity,
+    "volume_level": Infinity,
+    "ham_deviation": Infinity
+  },
+  "high_vif_factors": {
+    "basis_rate": Infinity,
+    "basis_chg5": Infinity,
+    "pos_chg_20d": Infinity,
+    "vol_chg_20d": Infinity,
+    "rvol20": Infinity,
+    "momentum_20d": Infinity,
+    "bias_rate": Infinity,
+    "position_level": Infinity,
+    "volume_level": Infinity,
+    "ham_deviation": Infinity
+  },
+  "corr_ham_vs_trad": {
+    "basis_rate": 0.077,
+    "basis_chg5": -0.005,
+    "pos_chg_20d": -0.038,
+    "vol_chg_20d": -0.147,
+    "rvol20": 0.416,
+    "momentum_20d": 0.193,
+    "bias_rate": 0.167,
+    "position_level": -0.022,
+    "volume_level": -0.111,
+    "term_structure": 0.043
+  }
+}
