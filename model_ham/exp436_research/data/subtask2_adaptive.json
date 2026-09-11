@@ -1,0 +1,81 @@
+{
+  "baseline_ham_dev_mean": {
+    "train_ic": 0.555,
+    "train_p": 0.0,
+    "orthogonal_ic": 0.6178,
+    "orthogonal_p": 0.0,
+    "permutation_p": 0.0099,
+    "blind_ic": -0.592,
+    "blind_p": 0.0
+  },
+  "fixed_disagree": {
+    "train_ic": -0.0502,
+    "train_p": 0.262,
+    "orthogonal_ic": 0.0376,
+    "orthogonal_p": 0.4016,
+    "permutation_p": 0.2772,
+    "blind_ic": 0.2067,
+    "blind_p": 0.031
+  },
+  "adaptive_v1": {
+    "train_ic": -0.0469,
+    "train_p": 0.295,
+    "orthogonal_ic": 0.0477,
+    "orthogonal_p": 0.2869,
+    "permutation_p": 0.2574,
+    "blind_ic": 0.1106,
+    "blind_p": 0.2521
+  },
+  "adaptive_v2": {
+    "train_ic": -0.03,
+    "train_p": 0.5025,
+    "orthogonal_ic": 0.0556,
+    "orthogonal_p": 0.2144,
+    "permutation_p": 0.5149,
+    "blind_ic": -0.0197,
+    "blind_p": 0.8386
+  },
+  "adaptive_v3": {
+    "train_ic": -0.039,
+    "train_p": 0.3838,
+    "orthogonal_ic": 0.0515,
+    "orthogonal_p": 0.25,
+    "permutation_p": 0.3762,
+    "blind_ic": 0.0275,
+    "blind_p": 0.7764
+  },
+  "factors_of_freedom": {
+    "baseline_ham_dev_mean": 0,
+    "fixed_disagree": 0,
+    "adaptive_v1": 2,
+    "adaptive_v2": 2,
+    "adaptive_v3": 2
+  },
+  "sensitivity_scan": [
+    {
+      "w_pos": 0,
+      "train_ic": -0.0344,
+      "train_p": 0.4424
+    },
+    {
+      "w_pos": 0.25,
+      "train_ic": -0.0479,
+      "train_p": 0.2849
+    },
+    {
+      "w_pos": 0.5,
+      "train_ic": -0.0533,
+      "train_p": 0.2333
+    },
+    {
+      "w_pos": 0.75,
+      "train_ic": -0.0548,
+      "train_p": 0.2212
+    },
+    {
+      "w_pos": 1.0,
+      "train_ic": -0.0549,
+      "train_p": 0.2203
+    }
+  ]
+}

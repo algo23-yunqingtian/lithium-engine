@@ -1,0 +1,47 @@
+{
+  "ham_dev_mean": {
+    "train_ic": 0.45,
+    "train_p": 0.0,
+    "orthogonal_residual_ic": 0.4943,
+    "orthogonal_p": 0.0,
+    "permutation_p": 0.0099,
+    "blind_test_ic": -0.592,
+    "blind_test_p": 0.0
+  },
+  "ham_n_f_minus_n_c": {
+    "train_ic": null,
+    "train_p": null,
+    "orthogonal_residual_ic": 0.0318,
+    "orthogonal_p": 0.4765,
+    "permutation_p": 0.0099,
+    "blind_test_ic": -0.0899,
+    "blind_test_p": 0.3523
+  },
+  "dir_disagreement": {
+    "train_ic": -0.105,
+    "train_p": 0.0186,
+    "orthogonal_residual_ic": -0.0691,
+    "orthogonal_p": 0.1218,
+    "permutation_p": 0.0297,
+    "blind_test_ic": 0.0957,
+    "blind_test_p": 0.3222
+  },
+  "disagreement_vol": {
+    "train_ic": 0.0791,
+    "train_p": 0.0791,
+    "orthogonal_residual_ic": -0.2925,
+    "orthogonal_p": 0.0,
+    "permutation_p": 0.0891,
+    "blind_test_ic": -0.1257,
+    "blind_test_p": 0.1929
+  },
+  "disagreement_decay": {
+    "train_ic": -0.0393,
+    "train_p": 0.3843,
+    "orthogonal_residual_ic": -0.0259,
+    "orthogonal_p": 0.5661,
+    "permutation_p": 0.3465,
+    "blind_test_ic": -0.0945,
+    "blind_test_p": 0.3283
+  }
+}

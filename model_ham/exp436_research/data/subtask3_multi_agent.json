@@ -1,0 +1,75 @@
+{
+  "2agent_baseline": {
+    "train_ic": -0.0509,
+    "train_p": 0.2547,
+    "orthogonal_ic": 0.0338,
+    "permutation_p": 0.3366,
+    "blind_ic": 0.1884
+  },
+  "3agent_trade": {
+    "train_ic": -0.0508,
+    "train_p": 0.2557,
+    "orthogonal_ic": 0.0338,
+    "permutation_p": 0.3366,
+    "blind_ic": 0.1884
+  },
+  "4agent_energy": {
+    "train_ic": -0.0051,
+    "train_p": 0.9108,
+    "orthogonal_ic": 0.1263,
+    "permutation_p": 0.9307,
+    "blind_ic": -0.0782
+  },
+  "parameter_analysis": {
+    "baseline_2agent": {
+      "agents": 2,
+      "params": 4,
+      "interactions": 1,
+      "total": 5
+    },
+    "expanded_3agent": {
+      "agents": 3,
+      "params": 6,
+      "interactions": 3,
+      "total": 9
+    },
+    "expanded_4agent": {
+      "agents": 4,
+      "params": 8,
+      "interactions": 6,
+      "total": 14
+    }
+  },
+  "stability": {
+    "2agent_baseline_40d": {
+      "mean": 0.1082,
+      "std": 0.132,
+      "positive_pct": 0.8074
+    },
+    "2agent_baseline_60d": {
+      "mean": 0.0685,
+      "std": 0.1229,
+      "positive_pct": 0.8009
+    },
+    "3agent_trade_40d": {
+      "mean": 0.1091,
+      "std": 0.1317,
+      "positive_pct": 0.8095
+    },
+    "3agent_trade_60d": {
+      "mean": 0.0695,
+      "std": 0.1226,
+      "positive_pct": 0.8009
+    },
+    "4agent_energy_40d": {
+      "mean": -0.0789,
+      "std": 0.3404,
+      "positive_pct": 0.4624
+    },
+    "4agent_energy_60d": {
+      "mean": -0.0729,
+      "std": 0.2317,
+      "positive_pct": 0.3891
+    }
+  }
+}

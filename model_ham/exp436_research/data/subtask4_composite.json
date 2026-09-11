@@ -1,0 +1,168 @@
+{
+  "n_features_pool": 19,
+  "single_factor_ic": {
+    "ham_dev_mean": {
+      "ic": 0.45,
+      "p": 0.0,
+      "significant": true
+    },
+    "ham_dev_median": {
+      "ic": 0.3921,
+      "p": 0.0,
+      "significant": true
+    },
+    "momentum_20d": {
+      "ic": 0.2518,
+      "p": 0.0,
+      "significant": true
+    },
+    "bias_rate": {
+      "ic": 0.2421,
+      "p": 0.0,
+      "significant": true
+    },
+    "rvol20": {
+      "ic": 0.1424,
+      "p": 0.0014,
+      "significant": true
+    },
+    "dir_disagreement": {
+      "ic": -0.105,
+      "p": 0.0186,
+      "significant": true
+    },
+    "basis_turn": {
+      "ic": -0.1004,
+      "p": 0.0245,
+      "significant": true
+    },
+    "disagreement_vol": {
+      "ic": 0.0791,
+      "p": 0.0791,
+      "significant": false
+    },
+    "basis_rate": {
+      "ic": -0.0677,
+      "p": 0.1296,
+      "significant": false
+    },
+    "adaptive_disagree_v1": {
+      "ic": -0.0533,
+      "p": 0.2333,
+      "significant": false
+    },
+    "ham_D_f_minus_D_c": {
+      "ic": -0.0509,
+      "p": 0.2547,
+      "significant": false
+    },
+    "multiagent_3": {
+      "ic": -0.0508,
+      "p": 0.2557,
+      "significant": false
+    },
+    "vol_chg_20d_pct": {
+      "ic": -0.0452,
+      "p": 0.3126,
+      "significant": false
+    },
+    "vol_rel": {
+      "ic": -0.0441,
+      "p": 0.3239,
+      "significant": false
+    },
+    "disagreement_decay": {
+      "ic": -0.0393,
+      "p": 0.3843,
+      "significant": false
+    },
+    "pos_chg_20d_pct": {
+      "ic": -0.0283,
+      "p": 0.5272,
+      "significant": false
+    },
+    "basis_rate_chg5": {
+      "ic": -0.0266,
+      "p": 0.5528,
+      "significant": false
+    },
+    "position_pct_chg": {
+      "ic": -0.0066,
+      "p": 0.8831,
+      "significant": false
+    },
+    "ham_n_f_minus_n_c": {
+      "ic": null,
+      "p": null,
+      "significant": false
+    }
+  },
+  "orthogonal_selection": [
+    "ham_dev_mean"
+  ],
+  "interactions": {
+    "ham_dev_mean_x_ham_dev_median": {
+      "ic": 0.4256,
+      "p": 0.0
+    },
+    "ham_dev_mean_x_momentum_20d": {
+      "ic": 0.2474,
+      "p": 0.0
+    },
+    "ham_dev_mean_x_bias_rate": {
+      "ic": 0.2486,
+      "p": 0.0
+    },
+    "ham_dev_mean_x_rvol20": {
+      "ic": 0.2938,
+      "p": 0.0
+    },
+    "ham_dev_median_x_momentum_20d": {
+      "ic": 0.2443,
+      "p": 0.0
+    },
+    "ham_dev_median_x_bias_rate": {
+      "ic": 0.243,
+      "p": 0.0
+    },
+    "ham_dev_median_x_rvol20": {
+      "ic": 0.2712,
+      "p": 0.0
+    },
+    "momentum_20d_x_bias_rate": {
+      "ic": -0.0117,
+      "p": 0.7933
+    },
+    "momentum_20d_x_rvol20": {
+      "ic": 0.2006,
+      "p": 0.0
+    },
+    "bias_rate_x_rvol20": {
+      "ic": 0.1831,
+      "p": 0.0
+    }
+  },
+  "composite_factors": {
+    "A_orthogonal_equal": {
+      "n_factors": 1,
+      "train_ic": 0.45,
+      "train_p": 0.0,
+      "orthogonal_ic": 0.4943,
+      "permutation_p": 0.0099,
+      "blind_ic": -0.592,
+      "blind_p": 0.0
+    },
+    "B_ic_weighted": {
+      "n_factors": 1,
+      "train_ic": 0.45,
+      "train_p": 0.0,
+      "orthogonal_ic": 0.4943,
+      "permutation_p": 0.0099,
+      "blind_ic": -0.592,
+      "blind_p": 0.0
+    }
+  },
+  "ic_weights": {
+    "ham_dev_mean": 0.44995873210586695
+  }
+}
